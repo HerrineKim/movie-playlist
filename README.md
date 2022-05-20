@@ -2,7 +2,25 @@
 
 
 
-### git commit message convention
+## 🌵git branch convention
+
+#### frontend/
+
+프론트엔드 관련 기능 (ex: frontend/login)
+
+#### backend/
+
+백엔드 관련 기능 (ex: backend/fixture)
+
+#### README
+
+리드미 수정
+
+
+
+
+
+## 🖋️git commit message convention
 
 #### 참고
 
