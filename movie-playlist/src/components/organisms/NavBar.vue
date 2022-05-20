@@ -25,11 +25,13 @@
           <router-link to='/community'>Community</router-link> | <router-link to='/community/new'>New</router-link> | 
           <router-link to='/community/:articlePk'>Article Detail</router-link> | <router-link to='/community/:articlePk/edit'>Edit</router-link> | 
         </li>
-        <li>
-          <router-link to='{ name: signup }'>Signup</router-link> |
-          <router-link to='/login'>Login</router-link> |
+        <li v-if="isLoggedIn">
           <router-link to='/logout'>Logout</router-link> |
-          <router-link to='/profile/:username'>Profile</router-link>
+        </li>
+        <li>
+          <router-link v-if="!isLoggedIn" to='{ name: signup }'>Signup</router-link> |
+          <router-link v-if="!isLoggedIn" to='/login'>Login</router-link> |
+          <router-link v-if="isLoggedIn" to='/profile/:username'>{{ currentUser.username }}'s page</router-link>
         </li>
       </ul>
     </nav>
