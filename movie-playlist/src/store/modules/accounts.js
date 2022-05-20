@@ -71,7 +71,6 @@ export default {
           router.push({ name: "login" })
         })
         .catch((err) => console.error(err));
-        // error 났을 때 뭐 해줄지는 고민해보기
     },
 
     fetchCurrentUser({ commit, getters }) {

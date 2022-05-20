@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": false,
     "target": "es5",
     "module": "esnext",
     "baseUrl": "./",
