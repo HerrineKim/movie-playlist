@@ -1,13 +1,12 @@
 <template>
   <div>
-    홈 화면 템플릿
+    <p>검색해보세요</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeTemplate',
-  components: {}
+  name: "SearchTitle"
 }
 </script>
 

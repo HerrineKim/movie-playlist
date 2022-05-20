@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import NavBar from '@/components/organisms/NavBar.vue'
+import NavBar from '@/components/templates/NavBar.vue'
 
 import { mapActions } from 'vuex'
 

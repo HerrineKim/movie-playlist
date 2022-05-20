@@ -1,13 +1,12 @@
 <template>
   <div>
-    홈 화면 템플릿
+    <button></button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeTemplate',
-  components: {}
+  name: "PlayButton",
 }
 </script>
 

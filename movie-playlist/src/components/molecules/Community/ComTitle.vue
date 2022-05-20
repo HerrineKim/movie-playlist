@@ -1,13 +1,12 @@
 <template>
   <div>
-    홈 화면 템플릿
+    <p></p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeTemplate',
-  components: {}
+  name: "ComTitle",
 }
 </script>
 
