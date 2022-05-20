@@ -1,13 +1,12 @@
 <template>
   <div>
-    홈 화면 템플릿
+    게시판 자체
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeTemplate',
-  components: {}
+  name: "ComBoard",
 }
 </script>
 

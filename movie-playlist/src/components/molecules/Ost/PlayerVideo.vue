@@ -1,13 +1,12 @@
 <template>
   <div>
-    홈 화면 템플릿
+    <iframe src="" frameborder="0"></iframe>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeTemplate',
-  components: {}
+  name: "PlayerVideo",
 }
 </script>
 

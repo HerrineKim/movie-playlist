@@ -1,13 +1,13 @@
 <template>
   <div>
-    홈 화면 템플릿
+    MP3 등 플레이어 이미지
+    <img src="" alt="">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeTemplate',
-  components: {}
+  name: "PlayerImage",
 }
 </script>
 

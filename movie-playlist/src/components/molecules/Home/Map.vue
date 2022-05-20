@@ -1,13 +1,11 @@
 <template>
   <div>
-    홈 화면 템플릿
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeTemplate',
-  components: {}
+  name: "Map",
 }
 </script>
 

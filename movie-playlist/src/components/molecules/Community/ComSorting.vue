@@ -1,13 +1,12 @@
 <template>
   <div>
-    홈 화면 템플릿
+    커뮤니티 정렬 기능
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeTemplate',
-  components: {}
+  name: "ComSorting",
 }
 </script>
 
