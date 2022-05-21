@@ -1,10 +1,23 @@
-
 import axios from 'axios'
 
-
+// 박스오피스 요청
 const KOR_URL = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json'
 const KOR_KEY = '66c2caa77d9f0b8b981e4940228bf4ac'
-// const today = new Date().toISOString().substring(0,10).replace(/-/g,'');
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth()+1
+var day = date.getDate();
+if(month < 10){
+    month = "0"+month;
+}
+if(day < 10){
+    day = "0"+day;
+}
+var today = year+""+month+""+day -1
+var todaystr = today.toString()
+
+// 다음은?
+
 
 export default {
   state: {
@@ -25,7 +38,7 @@ export default {
         url : KOR_URL,
         params: {
           key: KOR_KEY,
-          targetDt: '20220103',
+          targetDt: todaystr
         },
       })
       .then(res => {
