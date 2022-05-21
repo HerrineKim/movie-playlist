@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-link :to="{ name: 'HomeView' }">Home</router-link> |
     <nav-bar></nav-bar>
     <hr>
     <router-view></router-view>
@@ -9,17 +10,21 @@
 <script>
 import NavBar from '@/components/templates/NavBar.vue'
 
-import { mapActions } from 'vuex'
-
 export default {
   name: 'App',
   components: { NavBar },
   methods: {
-    ...mapActions(['fetchCurrentUser'])
+    fetchCurrentUser () {
+      this.$store.dispatch('fetchCurrentUser')
+    },
+    fetchBoxoffice () {
+      this.$store.dispatch('fetchBoxoffice')
+    },
   },
-  created() {
+  created () {
+    this.fetchBoxoffice()
     this.fetchCurrentUser()
-  }
+  },
 }
 </script>
 

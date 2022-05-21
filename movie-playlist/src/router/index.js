@@ -33,8 +33,8 @@ const routes = [
     component: LogoutView
   },
   {
-    path: '/',
-    name: 'home',
+    path: '/HomeView',
+    name: 'HomeView',
     component: HomeView
   },
   {

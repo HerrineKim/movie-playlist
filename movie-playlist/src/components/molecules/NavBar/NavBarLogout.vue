@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "Logout"
+  name: "NavBarLogout"
 }
 </script>
 

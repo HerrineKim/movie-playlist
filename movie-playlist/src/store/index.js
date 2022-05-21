@@ -3,9 +3,10 @@ import Vuex from 'vuex'
 
 // import articles from './modules/articles'
 import accounts from './modules/accounts'
+import home from './modules/home'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules: { accounts },
+  modules: { accounts, home },
 })
