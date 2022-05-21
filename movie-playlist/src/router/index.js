@@ -35,7 +35,7 @@ const routes = [
   {
     path: '/HomeView',
     name: 'HomeView',
-    component: HomeView
+    component: HomeView 
   },
   {
     path: '/first',

@@ -1,4 +1,5 @@
 import Vue from 'vue'
+
 import VueCookies from 'vue-cookies'
 
 import App from './App.vue'
