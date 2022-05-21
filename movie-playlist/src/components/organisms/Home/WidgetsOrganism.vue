@@ -2,6 +2,7 @@
   <div class="home container">
     <header-image class="image"></header-image>
     <boxoffice-kor></boxoffice-kor>
+    <theatre-map></theatre-map>
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import { mapGetters } from "vuex"
 import BoxofficeKor from "@/components/molecules/Home/BoxofficeKor.vue"
 import HeaderImage from '@/components/molecules/Home/HeaderImage.vue'
+import TheatreMap from '@/components/molecules/Home/TheatreMap.vue'
 
 export default {
   name: 'WidgetsOrganism',
   components: {
     BoxofficeKor,
     HeaderImage,
+    TheatreMap,
   },
   computed: {
     ...mapGetters([
@@ -26,8 +29,4 @@ export default {
 </script>
 
 <style scoped>
-  .image {
-    width: 100px;
-    height: 100%;
-  }
 </style>
