@@ -50,11 +50,23 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Local apps
+    'accounts',
+    'articles',
     'movies',
 
     # 3rd party apps
     'django_seed',
     'rest_framework',
+    'rest_framework.authtoken',
+
+    # DRF auth 담당
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+
+    # sinup을 위해 필요
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,7 +74,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -148,3 +162,18 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.User'
+
+# DRF 인증 관련 설정
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 우리 사이트는 인증을 토큰으로 할꺼임
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+
+        # 인증된 사용자만 모든일이 가능 / 비인증 사용자는 모두 401 Unauthorized
+        'rest_framework.permissions.IsAuthenticated'
+    ]
+}
