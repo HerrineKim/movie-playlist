@@ -18,6 +18,7 @@ import ArticleEditView from '../views/ArticleEditView.vue'
 import ArticleDetailView from '../views/ArticleDetailView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import ActorView from '../views/ActorView.vue'
+import OstView from '../views/OstView.vue'
 
 Vue.use(VueRouter)
 
@@ -86,6 +87,11 @@ const routes = [
     path: '/search/:moviePk',
     name: 'movieDetail',
     component: MovieDetailView
+  },
+  {
+    path: '/OST',
+    name: 'OST',
+    component: OstView
   },
   {
     path: '/signup',

@@ -1,45 +1,28 @@
 <template>
-  <div>
-    <nav>
-      <ul>
-        <li>
-          <router-link :to="{ name: 'HomeView' }">Home</router-link>
-        </li>
-        <li>
-          <router-link to='/first'>First</router-link> |
-        </li>
-        <li>
-          <router-link to='/search'>Search</router-link> |
-        </li>
-        <li>
-          <router-link to='/search/:moviePk'>Movie Detail</router-link> |
-        </li>
-        <li>
-          <router-link to='/hashtag'>Hashtag</router-link> |
-        </li>
-        <li>
-          <router-link to='/actors'>Actors</router-link> | <router-link to='/actors/:actorPk'>Actor</router-link> |
-
-        </li>
-        <li>
-          <router-link to='/community'>Community</router-link> | <router-link to='/community/new'>New</router-link> | 
-          <router-link to='/community/:articlePk'>Article Detail</router-link> | <router-link to='/community/:articlePk/edit'>Edit</router-link> | 
-        </li>
-        <li v-if="isLoggedIn">
-          <router-link to='/logout'>Logout</router-link> |
-        </li>
-        <li>
-          <router-link v-if="!isLoggedIn" to='{ name: signup }'>Signup</router-link> |
-          <router-link v-if="!isLoggedIn" to='/login'>Login</router-link> |
-        </li>
-        <li v-if="isLoggedIn">
-          <router-link :to="{ name: 'profile', params: { username } }">
-            {{ currentUser.username }}'s page
-          </router-link>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul>
+      <li>
+        <router-link :to="{ name: 'HomeView' }">Home</router-link> | <router-link to='/first'>First</router-link> |
+      </li>
+      <li>
+        <router-link to='/search'>Search</router-link> | <router-link to='/search/:moviePk'>Movie Detail</router-link> | <router-link to='/hashtag'>Hashtag</router-link> |
+        <router-link to='/actors'>Actors</router-link> | <router-link to='/actors/:actorPk'>Actor</router-link> |
+        <router-link to='/OST'>OST</router-link>
+      </li>
+      <li>
+        <router-link to='/community'>Community</router-link> | <router-link to='/community/new'>New</router-link> | 
+        <router-link to='/community/:articlePk'>Article Detail</router-link> | <router-link to='/community/:articlePk/edit'>Edit</router-link> | 
+      </li>
+      <li v-if="isLoggedIn">
+        <router-link to='/logout'>Logout</router-link> |
+        <router-link v-if="!isLoggedIn" to='{ name: signup }'>Signup</router-link> |
+        <router-link v-if="!isLoggedIn" to='/login'>Login</router-link> |
+        <router-link :to="{ name: 'profile', params: { username } }">
+          {{ currentUser.username }}'s page
+        </router-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
