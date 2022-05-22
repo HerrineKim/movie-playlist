@@ -31,7 +31,11 @@
         <li>
           <router-link v-if="!isLoggedIn" to='{ name: signup }'>Signup</router-link> |
           <router-link v-if="!isLoggedIn" to='/login'>Login</router-link> |
-          <router-link v-if="isLoggedIn" to='/profile/:username'>{{ currentUser.username }}'s page</router-link>
+        </li>
+        <li v-if="isLoggedIn">
+          <router-link :to="{ name: 'profile', params: { username } }">
+            {{ currentUser.username }}'s page
+          </router-link>
         </li>
       </ul>
     </nav>
