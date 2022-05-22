@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-// 박스오피스 요청
+// boxoffice API
 const KOR_URL = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json'
 const KOR_KEY = '66c2caa77d9f0b8b981e4940228bf4ac'
 var date = new Date();

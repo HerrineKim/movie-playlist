@@ -1,7 +1,6 @@
 <template>
   <div>
-    MP3 등 플레이어 이미지
-    <img src="" alt="">
+    <img src="@/assets/images/HeaderImage.jpg" alt="HeaderImage">
   </div>
 </template>
 
@@ -12,5 +11,8 @@ export default {
 </script>
 
 <style>
-
+  img {
+    width: 700px;
+    height: 100%;
+  }
 </style>
