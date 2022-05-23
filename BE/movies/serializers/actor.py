@@ -14,10 +14,10 @@ class ActorSerializer(serializers.ModelSerializer):
     class MovieSerializer(serializers.ModelSerializer):
         class Meta:
             model = Movie
-            fields = ('title')
+            fields = ('title',)
 
-    movie = MovieSerializer(Movie, read_only=True)
+    movies = MovieSerializer(many=True, read_only=True)
 
     class Meta:
         model = Actor
-        fields = '__all__'
+        fields = ('name', 'profile_path', 'movies')
