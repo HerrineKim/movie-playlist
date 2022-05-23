@@ -1,5 +1,5 @@
 <template>
-  <button></button>
+  <button>글 수정</button>
 </template>
 
 <script>
