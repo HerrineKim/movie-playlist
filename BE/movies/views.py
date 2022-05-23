@@ -1,8 +1,8 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
 
 from .serializers.actor import ActorListSerializer, ActorSerializer
+from .serializers.genre import GenreSerializer
 from .serializers.movie import MovieSerializer, MovieListSerializer, UserLikeMovieListSerializer, UserChoiceSimilarMovieSerializer
-from accounts.serializers import UserSerializer
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -26,6 +26,12 @@ def actor_list(request):
 def actor_detail(request, actor_pk):
     actor = get_object_or_404(Actor, pk=actor_pk)
     serializer = ActorSerializer(actor)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def genre_detail(request, genre_pk):
+    genre = get_object_or_404(Genre, pk=genre_pk)
+    serializer = GenreSerializer(genre)
     return Response(serializer.data)
 
 @api_view(['GET'])
