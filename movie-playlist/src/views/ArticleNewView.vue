@@ -1,15 +1,26 @@
 <template>
   <div>
-    <h2>커뮤니티에 새 글 작성</h2>
+    <h1>New Article</h1>
+    <article-form :article="article" action="create"></article-form>
   </div>
 </template>
 
 <script>
+import ArticleForm from '@/components/molecules/Article/ArticleForm.vue'
+
 export default {
-  name: 'ArticleNewView',
-  components: {
-    
-  }
+  name: 'AritcleNewView',
+  components: { ArticleForm },
+  data() {
+    return {
+      article: {
+        pk: null,
+        title: '',
+        content: ''
+      }
+    }
+  },
+  
 }
 </script>
 

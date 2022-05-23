@@ -2,7 +2,7 @@
   <div>
     <iframe
     width="560" height="315"
-    :src="videoUrl"
+    :src="src"
     title="YouTube video player" frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
@@ -10,7 +10,7 @@
     </iframe>
     <div v-for="OstInfo in OstInfos" :key="OstInfo.ost">
       {{ OstInfo.ost }} {{ OstInfo.artist }} {{ OstInfo.movie }}
-      <button @click="selectVideo">비디오띄워라</button>
+      <button @click="selectVideo(OstInfo)">비디오 나와랏</button>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   name: "OstItem",
   data() {
     return {
-      videoUrl: "",
+      src: "https://www.youtube.com/embed/RBNVmMgt1Bg",
       OstInfos: [
         {
           ost: 'See You Again (폴 워커 추모 엔딩곡) (분노의 질주 : 더 세븐(Fast & Furious 7) OST)',
@@ -346,7 +346,9 @@ export default {
   },
   methods: {
     selectVideo(OstInfo) {
-      this.videoUrl = `https://www.youtube.com/embed/${OstInfo.url}`
+      console.log(OstInfo)
+      this.src = `https://www.youtube.com/embed/${OstInfo.url}`
+      console.log(this.src)
     }
   }
 }

@@ -10,8 +10,7 @@
         <router-link to='/OST'>OST</router-link>
       </li>
       <li>
-        <router-link to='/community'>Community</router-link> | <router-link to='/community/new'>New</router-link> | 
-        <router-link to='/community/:articlePk'>Article Detail</router-link> | <router-link to='/community/:articlePk/edit'>Edit</router-link> | 
+        <router-link :to="{ name: 'articles' }">Community</router-link> |
       </li>
       <li v-if="isLoggedIn">
         <router-link to='/logout'>Logout</router-link> |

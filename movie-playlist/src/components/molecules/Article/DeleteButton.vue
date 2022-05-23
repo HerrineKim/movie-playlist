@@ -1,10 +1,10 @@
 <template>
-  <div></div>
+  <button>글 삭제</button>
 </template>
 
 <script>
 export default {
-  name: "ArticleCU",
+  name: "DeleteButton",
 }
 </script>
 

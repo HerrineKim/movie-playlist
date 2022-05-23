@@ -23,16 +23,8 @@ import OstView from '../views/OstView.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-  path: '/login',
-  name: 'login',
-  component: LoginView
-  },
-  {
-    path: '/logout',
-    name: 'logout',
-    component: LogoutView
-  },
+
+  // 홈 및 초기화면
   {
     path: '/HomeView',
     name: 'HomeView',
@@ -43,11 +35,15 @@ const routes = [
     name: 'first',
     component: FirstView
   },
+
+  // 해시태그 영화 추천
   {
     path: '/hashtag',
     name: 'hashtag',
     component: HashtagView
   },
+
+  // 배우 검색
   {
     path: '/actors',
     name: 'actors',
@@ -58,26 +54,30 @@ const routes = [
     name: 'actor',
     component: ActorView
   },
+
+  // Community
   {
-    path: '/community',
-    name: 'community',
-    component: CommunityView
+    path: '/articles',
+    name: 'articles',
+    component: CommunityView,
   },
   {
-    path: '/community/new',
+    path: '/articles/new',
     name: 'articleNew',
-    component: ArticleNewView
+    component: ArticleNewView,
   },
   {
-    path: '/community/:articlePk/edit',
+    path: '/articles/:articlePk',
+    name: 'article',
+    component: ArticleDetailView,
+  },
+  {
+    path: '/articles/:articlePk/edit',
     name: 'articleEdit',
-    component: ArticleEditView
+    component: ArticleEditView,
   },
-  {
-    path: '/community/:articlePk',
-    name: 'articleDetail',
-    component: ArticleDetailView
-  },
+
+  // 영화 검색
   {
     path: '/search',
     name: 'search',
@@ -88,15 +88,29 @@ const routes = [
     name: 'movieDetail',
     component: MovieDetailView
   },
+
+  // OST
   {
     path: '/OST',
     name: 'OST',
     component: OstView
   },
+
+  // Accounts, 404
   {
     path: '/signup',
     name: 'signup',
     component: SignupView
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+    },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: LogoutView
   },
   {
     path: '/404',

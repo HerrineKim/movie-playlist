@@ -1,15 +1,34 @@
 <template>
   <div>
-    <h2>게시판 글 수정</h2>
+    <h1>Edit Article</h1>
+    <article-form :article="article" action="update"></article-form>
   </div>
 </template>
 
 <script>
+import ArticleForm from '@/components/molecules/Article/ArticleForm.vue'
+
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
-  name: 'ArticleEditView',
-  components: {
-    
-  }
+  name: 'AritcleEditView',
+  components: { ArticleForm },
+  data() {
+    return {
+      articlePk: '',
+    }
+  },
+  computed: {
+    ...mapGetters(['article']),
+  },  
+  methods: {
+    ...mapActions(['fetchArticle'])
+  },
+  created () {
+    console.log('edit')
+    this.articlePk = this.$route.params.articlePk
+    this.fetchArticle({ articlePk: this.articlePk })
+  },
 }
 </script>
 

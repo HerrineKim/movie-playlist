@@ -1,10 +1,10 @@
 <template>
-  <div></div>
+  <button>좋아요</button>
 </template>
 
 <script>
 export default {
-  name: "DeleteButton",
+  name: "LikeButton",
 }
 </script>
 
