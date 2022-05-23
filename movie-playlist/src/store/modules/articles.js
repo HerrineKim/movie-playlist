@@ -12,7 +12,6 @@ export default {
     articles: (state) => state.articles,
     article: (state) => state.article,
     isAuthor: (state, getters) => {
-      // return state.article.user.username === getters.currentUser.user.username
       return state.article.user?.username === getters.currentUser?.username
     },
   },
@@ -41,7 +40,6 @@ export default {
           commit("SET_ARTICLE", res.data)
         })
         .catch((err) => {
-          console.error(err.response);
           if (err.response.status === 404) {
             router.push({ name: "NotFound404" });
           }
