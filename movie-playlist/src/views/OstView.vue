@@ -11,8 +11,9 @@ export default {
   name: 'OstView',
   components: {
     OstTemplate
-    
-  }
+
+  },
+  
 }
 </script>
 

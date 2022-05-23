@@ -38,14 +38,10 @@ export default {
         '말리꽃',
         '나의 왕자님 (My Prince)',
         '너에게 난 나에게 넌',
-        '하얀나비',
         '너무 아픈 사랑은 사랑이 아니었음을',
         '아마도 그건',
-        '나 항상 그대를',
-        '이차선 다리',
         '날 그만 잊어요 (Guitar ver.)',
         '조선의 마음',
-        '인연 (동녘바람)',
         'Merry Christmas Mr. Lawrence',
         "Oogway's Legacy",
         "Deborah's Theme [Once Upon a Time in America] (From “Once Upon A Time In The West”)",
@@ -55,13 +51,9 @@ export default {
         'あの夏へ - Ano Natsue (어느 여름날) (센과 치히로의 행방불명 OST)',
         '공중 산책',
         "Gabriel's Oboe",
-        '에필로그 (Epilogue)',
         'Cries And Whispers (우진테마)',
         "삽입곡 '변하지 않는 것' (Strings ver.)",
-        '684부대',
-        '만추(晩秋)',
         'Come What May (With Ewan Mcgregor)',
-        '어느 여름날 (あの夏へ)',
         'A Winter Story (러브레터 OST)',
         '인생의 회전목마 (하울의 움직이는 성)',
         'Quizas Quizas Quizas',
@@ -69,9 +61,13 @@ export default {
         'Cucurrucucu Paloma (Live 1995)',
         'Piano Solo',
         "드뷔시: 아라베스크 1번 (영화 '호로비츠를 위하여', '릴리 슈슈의 모든것')",
-        "Poverty/Deborah's Theme (Once Upon A Time In America)",
         'Romance',
-        '돌이킬 수 없는 걸음 (장화, 홍련)'
+        '돌이킬 수 없는 걸음 (장화, 홍련)',
+        'City of Stars',
+        'Speechless',
+        'Love Me Like You Do',
+        'Hakuna Matata',
+        'How Long Will I Love You',
         ],
       Artist: [
         'Charlie Puth(찰리 푸스)',
@@ -97,14 +93,10 @@ export default {
         '이승철',
         '박보영',
         '자전거 탄 풍경',
-        '심은경',
         '김광석',
         '홍민정',
-        '이선희',
-        '차태현',
         '거미',
         '천우희',
-        '이선희',
         'Ryuichi Sakamoto(류이치 사카모토/坂本龍一)',
         'Hans Zimmer(한스 짐머)',
         'Sissel(시셀)',
@@ -114,13 +106,9 @@ export default {
         'Hinata Miyuki(히나타 미유키)',
         'Hisaishi Joe(히사이시 조/久石 讓)',
         'Ennio Morricone(엔니오 모리꼬네)',
-        '이동준',
         '이지수',
         'Yoshida Kiyoshi(요시다 키요시)',
-        '조영욱',
-        '탕웨이(TANG Wei)',
         'Nicole Kidman(니콜 키드먼)', 
-        'Hisaishi Joe(히사이시 조/久石 讓)',
         'Ttoyo Studio Orchestra',
         'Elizabeth Bright(엘리자베스 브라이트)',
         'Nat King Cole(냇 킹 콜)',
@@ -128,10 +116,69 @@ export default {
         'Caetano Veloso(까에따누 벨로주)',
         'Ennio Morricone(엔니오 모리꼬네)',
         'Balázs Szokolay(발라스 쇼콜라이)',
-        'Die 12 Cellisten Der Berliner Philharmoniker(베를린 필 12 첼리스트)',
         'Yuhki Kuramoto(유키 구라모토/倉本裕基)',
-        '이병우'
+        '이병우',
+        'Ryan Gosling & Emma Stone',
+        'Naomi Scott',
+        'Ellie Goulding',
+        'Billy Eichner & Seth Rogen & JD McCrary & Donald Glover',
+        'Ellie Goulding',
         ],
+      OstUrls: [
+        'https://youtu.be/_ogDymI9BKM', // See you~
+        'https://youtu.be/honPlOzVRCU', // Listen
+        'https://youtu.be/RQa7SvVCdZk', // Lady Marmalad
+        'https://youtu.be/moSFlvxnbgk', // Let it go
+        'https://youtu.be/3JWTaaS7LdU', // I will always
+        'https://youtu.be/3gK_2XdjOdY', // My Heart will go on
+        'https://youtu.be/QK-Z1K67uaA', // shape of my heard
+        'https://youtu.be/cL4uhaQ58Rk', // Lost Stars
+        'https://youtu.be/_Yhyp-_hX2s', // Lose Yourself
+        'https://youtu.be/XFkzRNyygfk', // Creep
+        'https://youtu.be/S2ANkkdhWVY', // Falling~
+        'https://youtu.be/D1ZYhVpdXbQ', // Singin'~
+        'https://youtu.be/wyXNQiRCfRg', // I Just~
+        'https://youtu.be/zKrZDGTWLRc', // Skyfall
+        'https://youtu.be/g0cDp07uYP0', // I dreamed~
+        'https://youtu.be/0bwWy67MsOU', // Way Back Into~
+        'https://youtu.be/fLk-dYXs_rM', // Butterfly
+        'https://youtu.be/vSkXfrJtbAw', // Maria
+        'https://youtu.be/uU02KEA7fZo', // I believe
+        'https://youtu.be/aWXy974QLCk', // 희재
+        'https://youtu.be/7CheO99RfdY', // 말리꽃
+        'https://youtu.be/VH3W8kmQbVs', // 나의 왕자님
+        'https://youtu.be/5ysdHjaeGGU', // 너에게 난 나에게 넌
+        'https://youtu.be/BQLgM0dhRGg', // 너무 아픈 사랑은~
+        'https://youtu.be/-cl8RG-rw94', // 아마도 그건
+        'https://youtu.be/rRUlG9farOQ', // 날 그만~
+        'https://youtu.be/bXa47Sielrk', // 조선의 마음
+        'https://youtu.be/1OZDaRhHHyM', // Merry Christmas~
+        'https://youtu.be/2YqUCGMYQ28', // Oogway~
+        'https://youtu.be/ZuurydOcKYM', // Deborah~
+        'https://youtu.be/_DxjFs_dsR8', // The Last Waltz
+        'https://youtu.be/f8ZlsB28TZ0', // The Whole Nine Yards
+        'https://youtu.be/HV1CMDhemt0', // First Step
+        'https://youtu.be/iOYAl37AScY', // 어느 여름날
+        'https://youtu.be/1cW82FMWvzU', // 공중 산책
+        'https://youtu.be/lArnKBTe82I', // Gabriel's Oboe
+        'https://youtu.be/vh2LWnenZvw', // Cries And Whispers
+        'https://youtu.be/Lq2-HHP04jM', // 변하지 않는 것
+        'https://youtu.be/ELkO5oB5r9M', // Come What May
+        'https://youtu.be/4YlWxDD3-OE', // A Winter Story
+        'https://youtu.be/f7SS57LFPco', // 인생의 회전목마
+        'https://youtu.be/_Fg95PhPg6s', // Quizas Quizas Quizas
+        'https://youtu.be/9ZEURntrQOg', // Happy Together
+        'https://youtu.be/huQGD0N42K4', // Cucurrucucu~
+        'https://youtu.be/AD_DJR1Vyx4', // Piano Solo
+        'https://youtu.be/jiKb-JzJFQM', // 드뷔시~
+        'https://youtu.be/71EmgVktns4', // Romance
+        'https://youtu.be/oeLHy3dIiXs', // 돌이킬 수 없는 걸음
+        'https://youtu.be/GTWqwSNQCcg', // City of Stars
+        'https://youtu.be/mw5VIEIvuMI', // Speechless
+        'https://youtu.be/RuxfYnDl6p0', // Love Me Like You Do
+        'https://youtu.be/yUioIn8rPPM', // Hakuna Matata
+        'https://youtu.be/qhanxrVLepQ', // How Long~ 
+      ],
     }
   },
   methods: {
