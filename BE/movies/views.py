@@ -97,7 +97,6 @@ def user_like_movie(request, user_pk):
 
 @api_view(['GET'])
 def similar_movie(request, movie_pk):
-    movie = get_object_or_404(Movie, pk=movie_pk)
     movies = get_list_or_404(Movie)
     serializer = MovieListSerializer(movies, many=True)
     

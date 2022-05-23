@@ -46,17 +46,18 @@ class MovieSerializer(serializers.ModelSerializer):
     class GenreSerializer(serializers.ModelSerializer):
         class Meta:
             model = Genre
-            fields = '__all__'
+            fields = ('name',)
 
     class ActorSerializer(serializers.ModelSerializer):
         class Meta:
             model = Actor
             fields = ('name',)
 
-    genre = GenreSerializer(Genre, read_only=True)
-    actor = ActorSerializer(Actor, read_only=True)
+    genres = GenreSerializer(read_only=True, many=True)
+    actors = ActorSerializer(read_only=True, many=True)
     like_movies = UserSerializer(read_only=True, many=True)
 
     class Meta:
         model = Movie
         exclude = ('popularity', 'tagline', 'vote_average', 'vote_count', 'words',)
+

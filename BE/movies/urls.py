@@ -9,10 +9,10 @@ urlpatterns = [
     path('actors/<int:actor_pk>/', views.actor_detail),
 
     # genre
-    path('genres/<int:genre_pk>/', views.genre_detail),
+    path('genre/<int:genre_pk>/', views.genre_detail),
 
     # moodtag
-    path('moodtags/<int:moodtag_pk>/', views.moodtag_detail),
+    path('moodtag/<int:moodtag_pk>/', views.moodtag_detail),
 
     # casetag
     path('casetag/<int:casetag_pk>/', views.casetag_detail),

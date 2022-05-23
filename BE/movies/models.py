@@ -4,14 +4,14 @@ import datetime
 
 
 class Actor(models.Model):
-    name = models.CharField(max_length=300, null=False)
+    name = models.CharField(max_length=50, null=False)
     profile_path = models.TextField(null=True)
 
     def __str__(self):
         return self.name
 
 class Genre(models.Model):
-    name = models.CharField(max_length=300, null=False)
+    name = models.CharField(max_length=50, null=False)
 
     def __str__(self):
         return self.name
@@ -30,6 +30,8 @@ class CaseTag(models.Model):
 
 class Movie(models.Model):
     genres = models.ManyToManyField(Genre, related_name='movies')
+    moodtag = models.ManyToManyField(MoodTag, related_name='movies')
+    casetag = models.ManyToManyField(CaseTag, related_name='movies')
     actors = models.ManyToManyField(Actor, related_name='movies')
     title = models.CharField(max_length=300)
     overview = models.TextField()
