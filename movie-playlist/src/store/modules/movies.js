@@ -29,6 +29,7 @@ export default {
         .actors()
         .then((res) => {
           commit("SET_ACTORS", res.data);
+          console.log(res.data)
         })
         .catch((err) => console.error(err.response));
     },

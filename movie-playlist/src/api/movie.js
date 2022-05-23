@@ -5,33 +5,33 @@ export default {
   actors() {
     return api({
       method: "get",
-      url: "actors/",
+      url: "movies/actors/",
     })
   },
   actor(id) {
     return api({
       method: "get",
-      url: `actors/${id}`,
+      url: `movies/actors/${id}`,
     })
   },
   // genre
   genre(id) {
     return api({
       method: "get",
-      url: `genre/${id}`,
+      url: `movies/genre/${id}`,
     })
   },
   // tags
   moodtag(id) {
     return api({
       method: "get",
-      url: `moodtag/${id}`,
+      url: `movies/moodtag/${id}`,
     })
   },
   casetag(id) {
     return api({
       method: "get",
-      url: `casetag/${id}`,
+      url: `movies/casetag/${id}`,
     })
   },
   // movie

@@ -1,10 +1,11 @@
 <template>
-  <img src="" alt="">
+  <div></div>
 </template>
 
 <script>
 export default {
-  name: "ActorImage",
+  name: "ActorsList",
+
 }
 </script>
 

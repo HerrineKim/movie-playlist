@@ -82,8 +82,10 @@ export default {
     },
 
     fetchProfile({ commit }, { username }) {
-      account.profile(username).then((res) => {
+      account
+      .profile(username).then((res) => {
         commit("SET_PROFILE", res.data)
+        console.log(res.data)
       })
     },
   },

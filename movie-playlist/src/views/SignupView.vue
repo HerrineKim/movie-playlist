@@ -18,6 +18,14 @@
         <input type="password" id="password2" v-model="credentials.password2" required>
       </div>
       <div>
+        <label for="nickname">nickname:</label>
+        <input type="text" id="nickname" v-model="credentials.nickname" required>
+      </div>
+      <div>
+        <label for="description">description:</label>
+        <input type="test" id="description" v-model="credentials.description" required>
+      </div>
+      <div>
         <button>Signup</button>
       </div>
     </form>
@@ -37,6 +45,8 @@ export default {
         username: '',
         password1: '',
         password2: '',
+        nickname: '',
+        description: '',
       },
     }
   },
