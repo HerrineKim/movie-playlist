@@ -2,7 +2,7 @@
   <div class="home container">
     <header-image class="image"></header-image>
     <boxoffice-kor></boxoffice-kor>
-    <theatre-map></theatre-map>
+    <!-- <theatre-map></theatre-map> -->
     <random-quotes></random-quotes>
   </div>
 </template>
@@ -12,7 +12,7 @@
 import { mapGetters } from "vuex"
 import BoxofficeKor from "@/components/molecules/Home/BoxofficeKor.vue"
 import HeaderImage from '@/components/molecules/Home/HeaderImage.vue'
-import TheatreMap from '@/components/molecules/Home/TheatreMap.vue'
+// import TheatreMap from '@/components/molecules/Home/TheatreMap.vue'
 import RandomQuotes from '@/components/molecules/Home/RandomQuotes.vue'
 
 export default {
@@ -20,7 +20,7 @@ export default {
   components: {
     BoxofficeKor,
     HeaderImage,
-    TheatreMap,
+    // TheatreMap,
     RandomQuotes,
   },
   computed: {
