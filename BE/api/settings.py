@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django_seed',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 
     # DRF auth 담당
     'dj_rest_auth',
@@ -79,6 +80,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -164,6 +166,12 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
+
+# CORS_ALLOWED_ORIGINS에 교차 출처 자원 공유를 허용한 Domain 등록
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8080',
+    'http://127.0.0.1:8001',
+]
 
 # DRF 인증 관련 설정
 REST_FRAMEWORK = {
