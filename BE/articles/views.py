@@ -5,6 +5,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 
+from accounts import serializers
+
 from .models import Article, Comment
 from .serializers.article import ArticleListSerializer, ArticleSerializer
 from .serializers.comment import CommentSerializer
@@ -14,23 +16,6 @@ from .serializers.comment import CommentSerializer
 # 게시글 조회 및 생성
 @api_view(['GET', 'POST'])
 def article_list_or_create(request):
-    
-    '''
-    기존 게시글 생성 및 조회 함수
-    def article_list(request):
-        # 게시글 조회
-        if request.method == 'GET':
-            articles = get_list_or_404(Article)
-            serializer = ArticleListSerializer(articles, many=True)
-            return Response(serializer.data)
-
-        # 게시글 생성
-        elif request.method == 'POST':
-            serializer = ArticleSerializer(data=request.data)
-            if serializer.is_valid(raise_exception=True):
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-    '''
 
     def article_list():
         articles = Article.objects.annotate(

@@ -18,11 +18,12 @@ class ArticleSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True)
     user = UserSerializer(read_only=True)
     like_users = UserSerializer(read_only=True, many=True)
-    like_count = serializers.IntegerField()
-
+    like_count = serializers.IntegerField(source='like_users.count', read_only=True)
+    comment_count = serializers.IntegerField(source='comments.count', read_only=True)
+    
     class Meta:
         model = Article
-        fields = ('pk', 'user', 'title', 'content', 'comments', 'created_at', 'updated_at', 'like_users', 'like_count',)
+        fields = ('pk', 'user', 'title', 'content', 'comments', 'created_at', 'updated_at', 'like_users', 'like_count', 'comment_count',)
 
 # 게시글 목록
 class ArticleListSerializer(serializers.ModelSerializer):
@@ -31,9 +32,11 @@ class ArticleListSerializer(serializers.ModelSerializer):
         class Meta:
             model = User
             fields = ('pk', 'nickname')
+
     user = UserSerializer(read_only=True)
-    comment_count = serializers.IntegerField    # query annotate로 view에서 채워줄 것!
+    comment_count = serializers.IntegerField()    # query annotate로 view에서 채워줄 것!
     like_count = serializers.IntegerField()
+    
     class Meta:
         model = Article
         fields = ('pk', 'title', 'user', 'comment_count', 'like_count',)
