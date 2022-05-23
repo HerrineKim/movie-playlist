@@ -3,15 +3,27 @@ from django.conf import settings
 import datetime
 
 
+class Actor(models.Model):
+    name = models.CharField(max_length=300, null=False)
+    profile_path = models.TextField(null=True)
+
+    def __str__(self):
+        return self.name
+
 class Genre(models.Model):
     name = models.CharField(max_length=300, null=False)
 
     def __str__(self):
         return self.name
 
-class Actor(models.Model):
-    name = models.CharField(max_length=300, null=False)
-    profile_path = models.TextField(null=True)
+class MoodTag(models.Model):
+    name = models.CharField(max_length=100, null=False)
+
+    def __str__(self):
+        return self.name
+
+class CaseTag(models.Model):
+    name = models.CharField(max_length=100, null=False)
 
     def __str__(self):
         return self.name

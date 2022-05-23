@@ -11,6 +11,12 @@ urlpatterns = [
     # genre
     path('genres/<int:genre_pk>/', views.genre_detail),
 
+    # moodtag
+    path('moodtags/<int:moodtag_pk>/', views.moodtag_detail),
+
+    # casetag
+    path('casetag/<int:casetag_pk>/', views.casetag_detail),
+
     # movie
     path('<int:movie_pk>/', views.movie_detail),
     path('<int:movie_pk>/like/', views.like_movie),

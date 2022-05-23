@@ -1,0 +1,79 @@
+[
+  {
+    "model": "movies.casetag",
+    "pk": 1,
+    "fields": {
+      "name": "가족과 함께 보기"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 2,
+    "fields": {
+      "name": "친구들과 함께 보기"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 3,
+    "fields": {
+      "name": "썸남, 썸녀, 연인과 함께"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 4,
+    "fields": {
+      "name": "연말에 따뜻함을 느끼고 싶을 때"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 5,
+    "fields": {
+      "name": "봄 한 송이"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 6,
+    "fields": {
+      "name": "여름 한 컵"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 7,
+    "fields": {
+      "name": "가을 한 장"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 8,
+    "fields": {
+      "name": "겨울 한 숨"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 9,
+    "fields": {
+      "name": "훌쩍 여행 떠나고 싶을 때"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 10,
+    "fields": {
+      "name": "비 올때"
+    }
+  },
+  {
+    "model": "movies.casetag",
+    "pk": 11,
+    "fields": {
+      "name": "배고플 때 맛있는 음식과 함께"
+    }
+  }
+]
