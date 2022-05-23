@@ -1,0 +1,65 @@
+[
+  {
+    "model": "movies.moodtag",
+    "pk": 1,
+    "fields": {
+      "name": "펑펑 울고 싶을 때"
+    }
+  },
+  {
+    "model": "movies.moodtag",
+    "pk": 2,
+    "fields": {
+      "name": "기분 전환이 필요할 때"
+    }
+  },
+  {
+    "model": "movies.moodtag",
+    "pk": 3,
+    "fields": {
+      "name": "스트레스 뻥 뚫어버리기"
+    }
+  },
+  {
+    "model": "movies.moodtag",
+    "pk": 4,
+    "fields": {
+      "name": "댄스를 부르는"
+    }
+  },
+  {
+    "model": "movies.moodtag",
+    "pk": 5,
+    "fields": {
+      "name": "그냥 심심할 때 킬링타임"
+    }
+  },
+  {
+    "model": "movies.moodtag",
+    "pk": 6,
+    "fields": {
+      "name": "자존감 상승 시켜주는"
+    }
+  },
+  {
+    "model": "movies.moodtag",
+    "pk": 7,
+    "fields": {
+      "name": "두근두근 설레고 싶을 때"
+    }
+  },
+  {
+    "model": "movies.moodtag",
+    "pk": 8,
+    "fields": {
+      "name": "영상미 뿜뿜하는 영화"
+    }
+  },
+  {
+    "model": "movies.moodtag",
+    "pk": 9,
+    "fields": {
+      "name": "하이틴 시절이 생각나는"
+    }
+  }
+]

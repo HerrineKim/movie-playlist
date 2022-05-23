@@ -2,13 +2,14 @@ from django.shortcuts import get_list_or_404, get_object_or_404
 
 from .serializers.actor import ActorListSerializer, ActorSerializer
 from .serializers.genre import GenreSerializer
+from .serializers.moodtag import MoodTagSerializer
+from .serializers.casetag import CaseTagSerializer
 from .serializers.movie import MovieSerializer, MovieListSerializer, UserLikeMovieListSerializer, UserChoiceSimilarMovieSerializer
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from rest_framework import status
 
-from .models import Actor, Movie
+from .models import Actor, Movie, Genre, MoodTag, CaseTag
 from accounts.models import User
 
 from sklearn.feature_extraction.text import CountVectorizer
@@ -32,6 +33,18 @@ def actor_detail(request, actor_pk):
 def genre_detail(request, genre_pk):
     genre = get_object_or_404(Genre, pk=genre_pk)
     serializer = GenreSerializer(genre)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def moodtag_detail(request, moodtag_pk):
+    moodtag = get_object_or_404(MoodTag, pk=moodtag_pk)
+    serializer = MoodTagSerializer(moodtag)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def casetag_detail(request, casetag_pk):
+    casetag = get_object_or_404(CaseTag, pk=casetag_pk)
+    serializer = CaseTagSerializer(casetag)
     return Response(serializer.data)
 
 @api_view(['GET'])
