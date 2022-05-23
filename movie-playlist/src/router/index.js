@@ -26,7 +26,7 @@ const routes = [
 
   // 홈 및 초기화면
   {
-    path: '/HomeView',
+    path: '/',
     name: 'HomeView',
     component: HomeView 
   },
@@ -142,7 +142,7 @@ router.beforeEach((to, from, next) => {
   const { isLoggedIn } = store.getters
 
   // Login 필요 없는 route의 name
-  const noAuthPages = ['login', 'signup', ]
+  const noAuthPages = ['login', 'signup', 'HomeView',]
 
   // 현재 이동하고자 하는 페이지가 Authentication이 필요한가?
   const isAuthRequired = !noAuthPages.includes(to.name)
@@ -156,7 +156,7 @@ router.beforeEach((to, from, next) => {
   }
 
   if (!isAuthRequired && isLoggedIn) {
-    next({ name: 'home'})
+    next({ name: 'HomeView'})
   }
 })
 

@@ -12,13 +12,17 @@
       <li>
         <router-link :to="{ name: 'articles' }">Community</router-link> |
       </li>
+      <li v-if="!isLoggedIn">
+        <router-link :to="{ name: 'signup' }">Signup</router-link>
+      </li>
       <li v-if="isLoggedIn">
         <router-link to='/logout'>Logout</router-link> |
-        <router-link v-if="!isLoggedIn" to='{ name: signup }'>Signup</router-link> |
-        <router-link v-if="!isLoggedIn" to='/login'>Login</router-link> |
         <router-link :to="{ name: 'profile', params: { username } }">
           {{ currentUser.username }}'s page
         </router-link>
+      </li>
+      <li v-if="!isLoggedIn">
+        <router-link to='/login'>Login</router-link> |
       </li>
     </ul>
   </nav>
