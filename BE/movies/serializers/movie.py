@@ -53,10 +53,18 @@ class UserChoiceSimilarMovieSerializer(serializers.ModelSerializer):
 
 # 평점
 class RatingSerializer(serializers.ModelSerializer):
+
+    class UserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = User
+            fields =('pk',)
+
+    user = UserSerializer(read_only=True)
+
     class Meta:
         model = Rating
         fields= '__all__'
-        read_only_fields = ('user', 'movie',)
+        read_only_fields = ('movie',)
 
 # 단일 영화 상세 정보
 class MovieSerializer(serializers.ModelSerializer):
