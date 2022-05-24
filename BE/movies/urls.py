@@ -23,5 +23,6 @@ urlpatterns = [
     path('<int:user_pk>/recommendation/', views.user_like_movie),
     path('<int:movie_pk>/similar/', views.similar_movie),
     path('<int:movie_pk>/rating/', views.create_rating),
-    path('<int:movie_pk>/rating/<int:rating_pk>/', views.delete_rating), 
+    path('<int:movie_pk>/rating/<int:rating_pk>/', views.delete_rating),
+    path('<str:movie_name>/', views.search_movie), 
 ]

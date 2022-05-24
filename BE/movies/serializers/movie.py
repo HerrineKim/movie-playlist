@@ -23,7 +23,18 @@ class UserLikeMovieListSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = get_user_model()
-        fields = ('pk', 'username', 'nickname', 'like_movies',)
+        fields = ('pk', 'username', 'like_movies',)
+
+
+# 검색한 영화와 비슷한 영화
+class MovieSearchSerializer(serializers.ModelSerializer):
+
+    similarity = serializers.FloatField(default=0)
+
+    class Meta:
+        model = Movie
+        fields = ('pk', 'words', 'title', 'poster_path', 'similarity',)
+
 
 # 여러 영화 제공
 class MovieListSerializer(serializers.ModelSerializer):

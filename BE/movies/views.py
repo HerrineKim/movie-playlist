@@ -4,7 +4,7 @@ from .serializers.actor import ActorListSerializer, ActorSerializer
 from .serializers.genre import GenreSerializer
 from .serializers.moodtag import MoodTagSerializer
 from .serializers.casetag import CaseTagSerializer
-from .serializers.movie import MovieSerializer, MovieListSerializer, RatingSerializer, UserLikeMovieListSerializer, UserChoiceSimilarMovieSerializer
+from .serializers.movie import MovieSerializer, MovieListSerializer, RatingSerializer, UserLikeMovieListSerializer, UserChoiceSimilarMovieSerializer, MovieSearchSerializer
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -15,7 +15,7 @@ from accounts.models import User
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+from jellyfish import jaro_winkler_similarity
 
 # Create your views here.
 @api_view(['GET'])
@@ -47,6 +47,13 @@ def casetag_detail(request, casetag_pk):
     casetag = get_object_or_404(CaseTag, pk=casetag_pk)
     serializer = CaseTagSerializer(casetag)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def search_movie(request, movie_name):
+    movies = get_list_or_404(Movie)
+    serializer = MovieSearchSerializer(movies, many=True)
+    serializer = serach(serializer.data, movie_name)
+    return Response(serializer[:5])
 
 @api_view(['GET'])
 def movie_detail(request, movie_pk):
@@ -166,3 +173,14 @@ def recommend_movies_names(xMovie, idx, movies):
         pk_collection.append(movies.data[idx[0]]['pk'])
 
     return pk_collection
+
+# 편집거리 알고리즘
+def serach(lst, keyword):
+    fetch_data = []
+    for data in lst:
+        tmp = {'pk': 0, 'title': '', 'poster_path':'', 'similarity':''}
+        tmp['pk'] = data['pk']; tmp['title'] = data['title']; tmp['poster_path'] = data['poster_path']
+        tmp['similarity'] = jaro_winkler_similarity(keyword, data['title'])
+        fetch_data.append(tmp)
+    fetch_data.sort(key=lambda x : -x['similarity'])
+    return fetch_data
