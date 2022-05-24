@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from ..models import Movie, Genre, Actor
+from ..models import Movie, Genre, Actor, Rating
 
 User = get_user_model()
 
@@ -40,6 +40,13 @@ class UserChoiceSimilarMovieSerializer(serializers.ModelSerializer):
         model = Movie
         fields = ('title', 'poster_path',)
 
+# 평점
+class RatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields= '__all__'
+        read_only_fields = ('user', 'movie',)
+
 # 단일 영화 상세 정보
 class MovieSerializer(serializers.ModelSerializer):
 
@@ -56,6 +63,7 @@ class MovieSerializer(serializers.ModelSerializer):
     genres = GenreSerializer(read_only=True, many=True)
     actors = ActorSerializer(read_only=True, many=True)
     like_movies = UserSerializer(read_only=True, many=True)
+    ratings = RatingSerializer(many=True)
 
     class Meta:
         model = Movie

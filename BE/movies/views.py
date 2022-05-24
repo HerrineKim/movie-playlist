@@ -4,12 +4,13 @@ from .serializers.actor import ActorListSerializer, ActorSerializer
 from .serializers.genre import GenreSerializer
 from .serializers.moodtag import MoodTagSerializer
 from .serializers.casetag import CaseTagSerializer
-from .serializers.movie import MovieSerializer, MovieListSerializer, UserLikeMovieListSerializer, UserChoiceSimilarMovieSerializer
+from .serializers.movie import MovieSerializer, MovieListSerializer, RatingSerializer, UserLikeMovieListSerializer, UserChoiceSimilarMovieSerializer
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework import status
 
-from .models import Actor, Movie, Genre, MoodTag, CaseTag
+from .models import Actor, Movie, Genre, MoodTag, CaseTag, Rating
 from accounts.models import User
 
 from sklearn.feature_extraction.text import CountVectorizer
@@ -65,6 +66,32 @@ def like_movie(request, movie_pk):
         movie.like_users.add(user)
         serializer = MovieSerializer(movie)
         return Response(serializer.data)
+
+@api_view(['POST'])
+def create_rating(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    rating = movie.ratings.filter(user=request.user).first()
+    # 해당 영화에 대한 평점이 없는 경우 => 평점 등록
+    if not rating:
+        serializer = RatingSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save(user=request.user, movie=movie)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    # 이미 평점을 등록했다면 평점 수정
+    else:
+        serializer = RatingSerializer(rating, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save(user=request.user, movie=movie)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['DELETE'])
+def delete_rating(request, movie_pk, rating_pk):
+    rating = get_object_or_404(Rating, pk=rating_pk)
+
+    if request.user == rating.user:
+        rating.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET'])
 def user_like_movie(request, user_pk):
