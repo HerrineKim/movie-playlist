@@ -7,7 +7,7 @@
       <input type="text" id="title" v-model="newArticle.title">
     </div>
     <div>
-      <label for="content">content: </label>
+      <label for="content">contnet: </label>
       <textarea type="text" id="content" v-model="newArticle.content"></textarea>
     </div>
     <div>
@@ -24,6 +24,8 @@ export default {
     article: {
       type: Object,
     },
+    // title: String, 
+    // content: String,
     action: String,
   },
   data() {

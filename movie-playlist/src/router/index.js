@@ -6,7 +6,7 @@ import HomeView from '../views/HomeView.vue'
 import FirstView from '../views/FirstView.vue'
 import HashtagView from '../views/HashtagView.vue'
 import ActorsView from '../views/ActorsView.vue'
-import CommunityView from '../views/CommunityView.vue'
+import ArticleListView from '../views/ArticleListView.vue'
 import SignupView from '../views/SignupView.vue'
 import NotFound404 from '../views/NotFound404.vue'
 import LoginView from '../views/LoginView.vue'
@@ -59,7 +59,7 @@ const routes = [
   {
     path: '/articles',
     name: 'articles',
-    component: CommunityView,
+    component: ArticleListView,
   },
   {
     path: '/articles/new',

@@ -44,7 +44,7 @@ export default {
   movie_like(id) {
     return api({
       method: "post",
-      url: `movies/${id}/like`,
+      url: `movies/${id}/like/`,
     })
   },
   recommendation(id) {
@@ -58,5 +58,25 @@ export default {
       method: "get",
       url: `movies/${id}/similar`,
     })
+  },
+  search(movie_name) {
+    return api({
+      method: "get",
+      url: `movies/${movie_name}`,
+    })
+  },
+  create_rating(id, data) {
+    return api({
+      method: "post",
+      url: `movies/${id}/rating/`,
+      data: data
+    })
+  },
+  delete_rating(id, rating_id) {
+    return api({
+      method: "post",
+      url: `movies/${id}/rating/${rating_id}`,
+    })
   }
+  
 }

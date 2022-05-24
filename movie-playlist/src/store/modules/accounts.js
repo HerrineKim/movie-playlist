@@ -76,6 +76,7 @@ export default {
       if (getters.isLoggedIn) {
         account.currentUser().then((res) => {
           commit("SET_CURRENT_USER", res.data)
+          console.log(res.data)
         });
       }
     },
@@ -84,6 +85,7 @@ export default {
       account
       .profile(username).then((res) => {
         commit("SET_PROFILE", res.data)
+        console.log(res.data)
       })
     },
   },

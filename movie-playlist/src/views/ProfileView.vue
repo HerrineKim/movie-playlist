@@ -4,8 +4,8 @@
 
     <h2>작성한 글</h2>
     <ul>
-      <li v-for="article in profile.articles" :key="article.pk">
-        <router-link :to="{ name: 'article', params: { articlePk: article.pk } }">
+      <li v-for="article in profile.articles" :key="article.id">
+        <router-link :to="{ name: 'article', params: { articlePk: article.id } }">
           {{ article.title }}
         </router-link>
       </li>
@@ -13,8 +13,8 @@
 
     <h2>좋아요 한 글</h2>
     <ul>
-      <li v-for="article in profile.like_articles" :key="article.pk">
-        <router-link :to="{ name: 'article', params: { articlePk: article.pk } }">
+      <li v-for="article in profile.like_articles" :key="article.id">
+        <router-link :to="{ name: 'article', params: { articlePk: article.id } }">
           {{ article.title }}
         </router-link>
       </li>
