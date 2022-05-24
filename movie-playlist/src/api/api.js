@@ -8,7 +8,6 @@ export const api = axios.create({
 
 api.interceptors.request.use(function (config) {
   const token = localStorage.getItem('token')
-  console.log(token)
   // token이 없는 경우는 config
   if (!token) return config
   // token이 없는 경우 config 포함

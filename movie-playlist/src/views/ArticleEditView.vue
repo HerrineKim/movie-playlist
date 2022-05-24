@@ -25,7 +25,6 @@ export default {
     ...mapActions(['fetchArticle'])
   },
   created () {
-    console.log('edit')
     this.articlePk = this.$route.params.articlePk
     this.fetchArticle({ articlePk: this.articlePk })
   },

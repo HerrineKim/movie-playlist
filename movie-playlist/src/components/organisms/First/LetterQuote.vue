@@ -128,7 +128,6 @@ export default {
   methods: {
     randomQuote () {
       this.quote = _.sampleSize(this.quotes, 1)
-      console.log(this.quote)
     }
   },
   created() {

@@ -30,7 +30,6 @@ export default {
         .actors()
         .then((res) => {
           commit("SET_ACTORS", res.data);
-          console.log(res.data)
         })
         .catch((err) => console.error(err.response));
     },
@@ -39,7 +38,6 @@ export default {
         .actor(actorPk)
         .then((res) => {
           commit("SET_ACTOR", res.data);
-          console.log(res.data)
         })
         .catch((err) => {
           if (err.response.status === 404) {
