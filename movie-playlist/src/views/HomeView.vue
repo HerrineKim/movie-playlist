@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <div>
-      <h2>Home</h2>
       <widgets-organism></widgets-organism>
     </div>
   </div>
