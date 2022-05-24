@@ -1,6 +1,6 @@
 <template>
   <div class="home container">
-    <header-image class="image"></header-image>
+    <div></div>
     <boxoffice-kor></boxoffice-kor>
     <!-- <theatre-map></theatre-map> -->
     <random-quotes></random-quotes>
@@ -11,7 +11,6 @@
 // @ is an alias to /src
 import { mapGetters } from "vuex"
 import BoxofficeKor from "@/components/molecules/Home/BoxofficeKor.vue"
-import HeaderImage from '@/components/molecules/Home/HeaderImage.vue'
 // import TheatreMap from '@/components/molecules/Home/TheatreMap.vue'
 import RandomQuotes from '@/components/molecules/Home/RandomQuotes.vue'
 
@@ -19,7 +18,6 @@ export default {
   name: 'WidgetsOrganism',
   components: {
     BoxofficeKor,
-    HeaderImage,
     // TheatreMap,
     RandomQuotes,
   },
