@@ -43,7 +43,6 @@ export default {
       })
       .then(res => {
         commit('FETCH_BOXOFFICE', res.data.boxOfficeResult.dailyBoxOfficeList)
-        console.log(res.data.boxOfficeResult.dailyBoxOfficeList)
       })
       .catch(err => console.log(err))
     },

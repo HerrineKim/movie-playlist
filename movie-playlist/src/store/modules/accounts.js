@@ -56,7 +56,6 @@ export default {
           router.push({ name: "articles" })
         })
         .catch((err) => {
-          // console.log(err.response.data)
           commit("SET_AUTH_ERROR", err.response.data)
         })
     },

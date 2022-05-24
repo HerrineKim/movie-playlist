@@ -1,13 +1,15 @@
 <template>
   <div class="hashtag">
-    <h2>해시태그 기반 영화 필터링 기능</h2>
+    <hashtag-movies></hashtag-movies>
   </div>
 </template>
 
 <script>
+import HashtagMovies from "@/components/organisms/Hashtag/HashtagMovies.vue"
 export default {
   name: 'HashtagView',
   components: {
+    HashtagMovies
   }
 }
 </script>

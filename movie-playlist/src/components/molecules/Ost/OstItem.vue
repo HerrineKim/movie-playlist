@@ -346,9 +346,7 @@ export default {
   },
   methods: {
     selectVideo(OstInfo) {
-      console.log(OstInfo)
       this.src = `https://www.youtube.com/embed/${OstInfo.url}`
-      console.log(this.src)
     }
   }
 }

@@ -23,6 +23,7 @@ export default {
         .genre(genrePk)
         .then((res) => {
           commit("SET_GENRE_MOVIES", res.data)
+          console.log(res.data)
         })
         .catch((err) => {
           if (err.response.status === 404) {
@@ -34,7 +35,7 @@ export default {
       movie
         .genre(moodtagPk)
         .then((res) => {
-          commit("SET_GENRE_MOVIES", res.data)
+          commit("SET_MOODTAG_MOVIES", res.data)
         })
         .catch((err) => {
           if (err.response.status === 404) {
@@ -46,7 +47,7 @@ export default {
       movie
         .genre(casetagPk)
         .then((res) => {
-          commit("SET_GENRE_MOVIES", res.data)
+          commit("SET_CASETAG_MOVIES", res.data)
         })
         .catch((err) => {
           if (err.response.status === 404) {
