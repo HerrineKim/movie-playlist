@@ -13,7 +13,7 @@ class ArticleSerializer(serializers.ModelSerializer):
     class UserSerializer(serializers.ModelSerializer):
         class Meta:
             model = User
-            fields = ('pk', 'nickname')
+            fields = ('pk',)
 
     comments = CommentSerializer(many=True, read_only=True)
     user = UserSerializer(read_only=True)
@@ -31,7 +31,7 @@ class ArticleListSerializer(serializers.ModelSerializer):
     class UserSerializer(serializers.ModelSerializer):
         class Meta:
             model = User
-            fields = ('pk', 'nickname')
+            fields = ('pk',)
 
     user = UserSerializer(read_only=True)
     comment_count = serializers.IntegerField()    # query annotate로 view에서 채워줄 것!
