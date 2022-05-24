@@ -18,10 +18,10 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('articles', 'pk', 'nickname', 'like_articles',)
+        fields = ('articles', 'pk', 'username', 'like_articles',)
 
 # 유저 정보
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('pk', 'nickname')
+        fields = ('pk', 'username',)

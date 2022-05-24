@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.conf import settings
 import datetime
 
@@ -51,4 +52,12 @@ class Movie(models.Model):
         return self.title
 
 
+class Rating(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='ratings')
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='ratings')
+    rate = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+    review = models.TextField(null=True)
+
+    def __str__(self):
+        return self.user
     
