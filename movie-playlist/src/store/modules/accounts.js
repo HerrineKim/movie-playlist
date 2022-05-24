@@ -37,7 +37,7 @@ export default {
           // currentUser setting
           dispatch("fetchCurrentUser")
           // page 이동
-          router.push({ name: "articles" })
+          router.push({ name: "first" })
         })
         .catch((err) => {
           // console.error(err.response.data)
@@ -85,7 +85,6 @@ export default {
       account
       .profile(username).then((res) => {
         commit("SET_PROFILE", res.data)
-        console.log(res.data)
       })
     },
   },
