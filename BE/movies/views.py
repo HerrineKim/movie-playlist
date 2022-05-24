@@ -74,6 +74,48 @@ def like_movie(request, movie_pk):
         serializer = MovieSerializer(movie)
         return Response(serializer.data)
 
+
+@api_view(['POST'])
+def create_rating(request, movie_pk):
+    user = request.user
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    
+    serializer = RatingSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(movie=movie, user=user)
+
+        ratings = movie.ratings.all()
+        serializer = RatingSerializer(ratings, many=True)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+@api_view(['PUT', 'DELETE'])
+def rating_update_or_delete(request, movie_pk, rating_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    rating = get_object_or_404(Rating, pk=rating_pk)
+
+    def update_rating():
+        if request.user == rating.user:
+            serializer = RatingSerializer(instance=rating, data=request.data)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+                ratings = movie.ratings.all()
+                serializer = RatingSerializer(ratings, many=True)
+                return Response(serializer.data)
+
+    def delete_rating():
+        if request.user == rating.user:
+            rating.delete()
+            ratings = movie.ratings.all()
+            serializer = RatingSerializer(ratings, many=True)
+            return Response(serializer.data)
+    
+    if request.method == 'PUT':
+        return update_rating()
+    elif request.method == 'DELETE':
+        return delete_rating()
+
+
 @api_view(['POST'])
 def create_rating(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)

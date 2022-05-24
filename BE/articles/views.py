@@ -1,29 +1,28 @@
+# articles/views.py
+
 from django.shortcuts import get_object_or_404
 from django.db.models import Count
 
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
 from rest_framework import status
-
-from accounts import serializers
-
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from .models import Article, Comment
 from .serializers.article import ArticleListSerializer, ArticleSerializer
 from .serializers.comment import CommentSerializer
 
-# Create your views here.
 
-# 게시글 조회 및 생성
 @api_view(['GET', 'POST'])
 def article_list_or_create(request):
 
     def article_list():
+        # comment 개수 추가
         articles = Article.objects.annotate(
-            comment_count = Count('comments', distinct=True),
-            like_count=Count('like_users', distinct=True)).order_by('-pk')
+            comment_count=Count('comments', distinct=True),
+            like_count=Count('like_users', distinct=True)
+        ).order_by('-pk')
         serializer = ArticleListSerializer(articles, many=True)
-        return Response(serializer.data)     
-
+        return Response(serializer.data)
+    
     def create_article():
         serializer = ArticleSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
@@ -35,7 +34,7 @@ def article_list_or_create(request):
     elif request.method == 'POST':
         return create_article()
 
-# 단일 게시글 상세, 수정, 삭제
+
 @api_view(['GET', 'PUT', 'DELETE'])
 def article_detail_or_update_or_delete(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
@@ -65,6 +64,7 @@ def article_detail_or_update_or_delete(request, article_pk):
         if request.user == article.user:
             return delete_article()
 
+
 @api_view(['POST'])
 def like_article(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
@@ -77,6 +77,7 @@ def like_article(request, article_pk):
         article.like_users.add(user)
         serializer = ArticleSerializer(article)
         return Response(serializer.data)
+
 
 @api_view(['POST'])
 def create_comment(request, article_pk):
