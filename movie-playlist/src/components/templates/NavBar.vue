@@ -6,7 +6,7 @@
       </li>
       <li>
         <router-link to='/search'>Search</router-link> | <router-link to='/search/:moviePk'>Movie Detail</router-link> | <router-link to='/hashtag'>Hashtag</router-link> |
-        <router-link to='/actors'>Actors</router-link> | <router-link to='/actors/:actorPk'>Actor</router-link> |
+        <router-link to='/actors'>Actors</router-link> |
         <router-link to='/OST'>OST</router-link>
       </li>
       <li>

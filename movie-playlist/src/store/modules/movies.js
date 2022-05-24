@@ -11,7 +11,8 @@ export default {
   },
   getters: {
     actors: (state) => state.actors,
-    article: (state) => state.actor,
+    actor: (state) => state.actor,
+    article: (state) => state.article,
     movie: (state) => state.movie,
     recommendation: (state) => state.recommendation,
     similar: (state) => state.similar
@@ -38,6 +39,7 @@ export default {
         .actor(actorPk)
         .then((res) => {
           commit("SET_ACTOR", res.data);
+          console.log(res.data)
         })
         .catch((err) => {
           if (err.response.status === 404) {
