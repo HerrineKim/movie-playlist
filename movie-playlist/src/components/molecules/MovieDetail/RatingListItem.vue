@@ -30,7 +30,7 @@ export default {
       isEditing: false,
       payload: {
         moviePk: this.rating.movie,
-        ratingPk: this.rating.pk,
+        ratingPk: this.rating.id,
         rate: this.rating.rate
       },
     }

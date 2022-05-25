@@ -1,10 +1,14 @@
 <template>
-  <!-- 평점 -->
-  <form @submit.prevent="onSubmit">
-    <label for="rating">평점을 입력하세요</label>
-    <input v-model="content" type="number" id="rating" min="1" max="9" required>
-    <button>평점입력</button>
-  </form>
+  <div>
+    <p > {{ movie }} </p>
+    <p>{{  currentUser }}</p>
+    <!-- 평점 -->
+    <form @submit.prevent="onSubmit">
+      <label for="rating">평점을 입력하세요</label>
+      <input v-model="content" type="number" id="rating" min="1" max="9" required>
+      <button>평점입력</button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -19,7 +23,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['movie']),
+    ...mapGetters(['movie', 'currentUser']),
   },
   methods: {
     ...mapActions(['createRating']),

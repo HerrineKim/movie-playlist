@@ -2,7 +2,13 @@
   <div>
     <nav-bar></nav-bar>
     <!-- 영화 detail -->
-    <h1>{{ movie.title }}</h1>
+    <div>
+      <h2>{{ movie.title }}</h2>
+      <img
+            class="card-img-top"
+            :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path" alt=""
+            >
+    </div>
 
     <!-- 좋아요 -->
     <div>
