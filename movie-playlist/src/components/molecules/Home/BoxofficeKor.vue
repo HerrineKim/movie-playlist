@@ -8,13 +8,13 @@
     <div
     v-for="box in boxoffice" :key="box.rnum"
     >
-      <span>
+      <span style="font-family: 'GmarketSansMedium';">
         {{ box.rank }}
       </span> 
-      <span>
+      <span style="font-family: 'GmarketSansMedium';">
         {{ box.movieNm }}
       </span>
-      <span
+      <span style="font-family: 'GmarketSansMedium';"
       v-if="box.rankOldAndNew == 'NEW'"
       >
         {{ box.rankOldAndNew }}
@@ -45,6 +45,14 @@ export default {
   @font-face {
     font-family: 'GimpoGothicBold00';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/GimpoGothicBold00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }

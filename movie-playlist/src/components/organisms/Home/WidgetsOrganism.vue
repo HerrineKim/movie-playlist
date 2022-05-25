@@ -9,14 +9,14 @@
       <div class="col py-5 px-3">
         <boxoffice-kor></boxoffice-kor>
       </div>
-      <div class="col py-5">
+      <div class="col py-5 px-3 mt-3">
+        <random-ost></random-ost>
+      </div>
+      <div class="col py-3">
         <random-quotes></random-quotes>
       </div>
-      <div class="col py-3">
+      <div class="col py-3 px-3">
         <random-actor></random-actor>
-      </div>
-      <div class="col py-3">
-        <random-ost></random-ost>
       </div>
     </div>
   </div>
