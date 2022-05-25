@@ -1,5 +1,6 @@
 <template>
   <div>
+    <nav-bar></nav-bar>
     <!-- 영화 detail -->
     <h1>{{ movie.title }}</h1>
 
@@ -34,13 +35,14 @@
 
 <script>
 import RatingList from "@/components/organisms/MovieDetail/RatingList.vue"
+import NavBar from '@/components/templates/NavBar.vue'
 
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'MovieDetailView',
   components: {
-    RatingList
+    RatingList, NavBar
   },
   data() {
     return {

@@ -1,8 +1,8 @@
 <template>
 <!-- 홈 화면 랜덤 ost -->
-  <div style="padding:10px;background:#000;webkit-border-radius:30px;-moz-border-radius: 20px;border-radius: 20px;width:560px;margin:0 auto;overflow:hidden;">
+  <div style="padding:10px;background:#000;webkit-border-radius:30px;-moz-border-radius: 20px;border-radius: 20px;width:500px;margin:0 auto;overflow:hidden;">
     <iframe
-    width="560" height="315"
+    width="500" height="315"
     :src="'https://www.youtube.com/embed/' + randomOst[0].url + '?autoplay=1'"
     title="YouTube video player" frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <nav-bar></nav-bar>
     <ul>
       <li v-for="article in articles" :key="article.pk">
         <!-- User -->
@@ -23,12 +24,14 @@
 </template>
 
 <script>
+import NavBar from '@/components/templates/NavBar.vue'
 import { mapGetters, mapActions } from 'vuex'
-
-
 
 export default {
   name: 'ArticleList',
+  components: {
+    NavBar
+  },
   computed: {
     ...mapGetters(['articles'])
   },

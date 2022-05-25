@@ -1,5 +1,6 @@
 <template>
   <div>
+    <nav-bar></nav-bar>
     <h1>{{ profile.username }}</h1>
 
     <h2>작성한 글</h2>
@@ -23,11 +24,15 @@
 </template>
 
 <script>
+import NavBar from "@/components/templates/NavBar.vue"
 import { mapGetters, mapActions } from 'vuex'
 
 
 export default {
   name: 'ProfileView',
+  components: {
+    NavBar
+  },
   computed: {
     ...mapGetters(['profile'])
   },

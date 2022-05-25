@@ -1,5 +1,6 @@
 <template>
   <div>
+    <nav-bar></nav-bar>
     <h1>Edit Article</h1>
     <article-form :article="article" action="update"></article-form>
   </div>
@@ -7,12 +8,12 @@
 
 <script>
 import ArticleForm from '@/components/molecules/Article/ArticleForm.vue'
-
+import NavBar from '@/components/templates/NavBar.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'AritcleEditView',
-  components: { ArticleForm },
+  components: { ArticleForm, NavBar },
   data() {
     return {
       articlePk: '',

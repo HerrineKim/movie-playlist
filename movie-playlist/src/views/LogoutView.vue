@@ -1,13 +1,19 @@
 <template>
   <div>
+    <nav-bar></nav-bar>
     <h1>Logout</h1>
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/templates/NavBar.vue'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
+  name: 'LogoutView',
+  components: {
+    NavBar
+  },
   methods: {
     ...mapActions(['logout'])
   },

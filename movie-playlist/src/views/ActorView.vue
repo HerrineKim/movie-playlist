@@ -1,5 +1,6 @@
 <template>
   <div>
+    <nav-bar></nav-bar>
     <h2>영화배우 detail 화면</h2>
     <p>{{ actor.name }}</p>
     <img :src="actorImgUrl">
@@ -10,10 +11,12 @@
 </template>
 
 <script>
+import NavBar from '@/components/templates/NavBar.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'ActorView',
+  components: { NavBar },
   data() {
     return {
       actorPk: ''

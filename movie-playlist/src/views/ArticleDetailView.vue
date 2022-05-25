@@ -1,5 +1,6 @@
 <template>
   <div>
+    <nav-bar></nav-bar>
     <h1>{{ article.title }}</h1>
 
     <p>
@@ -25,6 +26,7 @@
 </template>
 
 <script>
+import NavBar from '@/components/templates/NavBar.vue'
 import CommentList from '@/components/organisms/Article/CommentList.vue'
 
 import { mapGetters, mapActions } from 'vuex'
@@ -32,7 +34,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'ArticleDetail',
-  components: { CommentList },
+  components: { CommentList, NavBar },
   data() {
     return {
       articlePk: ''

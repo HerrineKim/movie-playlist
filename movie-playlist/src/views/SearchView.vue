@@ -1,4 +1,6 @@
 <template>
+<div>
+  <nav-bar></nav-bar>
   <div class="container">
     <!-- 검색창 -->
     <div class="container col-5 my-3">
@@ -48,15 +50,18 @@
       </p>
     </div>
   </div>
+</div>
+
 </template>
 
 <script>
+import NavBar from "@/components/templates/NavBar.vue"
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'SearchView',
   components: {
-
+    NavBar
   },
   data() {
     return {
@@ -80,7 +85,7 @@ export default {
   created() {
     this.userPk = this.currentUser.pk
     this.recommendation({ userPk: this.userPk })
-    console.log(this.userPk)
+    // console.log(this.userPk)
   }
 }
 </script>
