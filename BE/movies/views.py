@@ -79,15 +79,22 @@ def like_movie(request, movie_pk):
 def create_rating(request, movie_pk):
     user = request.user
     movie = get_object_or_404(Movie, pk=movie_pk)
-    
+    rating = movie.ratings.filter(user=user).first()
     serializer = RatingSerializer(data=request.data)
-    if serializer.is_valid(raise_exception=True):
-        serializer.save(movie=movie, user=user)
+    if not rating:
+        if serializer.is_valid(raise_exception=True):
+            serializer.save(movie=movie, user=user)
 
-        ratings = movie.ratings.all()
-        serializer = RatingSerializer(ratings, many=True)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-
+            ratings = movie.ratings.all()
+            serializer = RatingSerializer(ratings, many=True)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    # 이미 평점을 등록했다면 평점 수정해버리기 - 한 사람이 한 영화에 대해 여러 평점 x
+    else:
+        serializer = RatingSerializer(rating, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save(user=request.user, movie=movie)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['PUT', 'DELETE'])
 def rating_update_or_delete(request, movie_pk, rating_pk):
@@ -114,33 +121,6 @@ def rating_update_or_delete(request, movie_pk, rating_pk):
         return update_rating()
     elif request.method == 'DELETE':
         return delete_rating()
-
-
-@api_view(['POST'])
-def create_rating(request, movie_pk):
-    movie = get_object_or_404(Movie, pk=movie_pk)
-    rating = movie.ratings.filter(user=request.user).first()
-    # 해당 영화에 대한 평점이 없는 경우 => 평점 등록
-    if not rating:
-        serializer = RatingSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save(user=request.user, movie=movie)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-    # 이미 평점을 등록했다면 평점 수정
-    else:
-        serializer = RatingSerializer(rating, data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save(user=request.user, movie=movie)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-@api_view(['DELETE'])
-def delete_rating(request, movie_pk, rating_pk):
-    rating = get_object_or_404(Rating, pk=rating_pk)
-
-    if request.user == rating.user:
-        rating.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET'])
 def user_like_movie(request, user_pk):
