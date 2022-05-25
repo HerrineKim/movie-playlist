@@ -23,7 +23,7 @@ export default {
         .genre(genrePk)
         .then((res) => {
           commit("SET_GENRE_MOVIES", res.data)
-          console.log(res.data)
+          // console.log(res.data)
         })
         .catch((err) => {
           if (err.response.status === 404) {

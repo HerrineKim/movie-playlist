@@ -1,35 +1,57 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <!-- 영화 detail -->
-    <h1>{{ movie.title }}</h1>
+    <div class="container">
+      <!-- 영화 detail -->
+      <h1>{{ movie.title }}</h1>
 
-    <!-- 좋아요 -->
-    <div>
-      <div v-if="is_liked">
-        <i class="fas fa-heart"
-        @click="likeMovie"
-        >
-        </i>
+      <!-- 좋아요 -->
+      <div>
+        <div v-if="is_liked">
+          <i class="fas fa-heart"
+          @click="likeMovie"
+          >
+          </i>
+        </div>
+        <div v-else>
+          <i class="far fa-heart"
+          @click="likeMovie"
+          >
+          </i>
+        </div>
       </div>
-      <div v-else>
-        <i class="far fa-heart"
-        @click="likeMovie"
-        >
-        </i>
-      </div>
-    </div>
 
-    <!-- 평점 -->
-    <div>
-      <rating-list :ratings="movie.ratings"></rating-list>
-    </div>
-    
-    <div>
-      <p v-for="sim in similarMovies" :key="sim">
-        {{ sim.title }}
-      </p>
-    </div>
+      <!-- 평점 -->
+      <div>
+        <rating-list :ratings="movie.ratings"></rating-list>
+      </div>
+      
+      <!-- 비슷한 영화 -->
+      <div class="row mt-5">
+          <p style="font-family:MapoGoldenPier; text-align:left">
+            이 영화를 재미있게 봤다면?
+          </p>
+          <div v-for="sim in similarMovies" :key="sim.poster_path" 
+          class="col-12 col-sm-4 col-md-3"
+          >
+            <div class="card border mb-3">
+              <router-link
+              :to="{ name: 'movieDetail', params: { moviePk: sim.pk } }"
+              >
+                <img
+                class="card-img-top"
+                :src="'https://image.tmdb.org/t/p/w300/' + sim.poster_path" alt=""
+                >
+              </router-link>
+              <div class="card-body">
+                <hr>
+                <h5 class="card-title">{{ sim.title }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div> 
   </div>
 </template>
 

@@ -49,7 +49,7 @@ class UserChoiceSimilarMovieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('title', 'poster_path',)
+        fields = ('title', 'poster_path', 'pk')
 
 # 평점
 class RatingSerializer(serializers.ModelSerializer):
