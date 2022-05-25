@@ -1,6 +1,7 @@
 <template>
   <div>
     <nav-bar></nav-bar>
+
     <div class="container">
       <br>
       <div class="container">
@@ -83,11 +84,6 @@ export default {
       width: 100%;
       height: 100%;
       object-fit: cover;
-  }
-  @font-face {
-    font-family: "BLACKSWORD";
-    font-weight: 400;
-    src: url("@/assets/fonts/BLACKSWORD.OTF") format("otf");
   }
 
 </style>
