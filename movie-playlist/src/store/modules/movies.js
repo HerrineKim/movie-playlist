@@ -9,7 +9,6 @@ export default {
     recommendationMovies: [],
     similarMovies: [],
     search: [],
-    rating: 1
   },
   getters: {
     actors: (state) => state.actors,
@@ -19,7 +18,6 @@ export default {
     recommendationMovies: (state) => state.recommendationMovies,
     similarMovies: (state) => state.similarMovies,
     search: (state) => state.search,
-    rating: (state) => state.rating
   },
   mutations: {
     SET_ACTORS: (state, actors) => (state.actors = actors),
@@ -28,7 +26,7 @@ export default {
     SET_RECOMMENDATION_MOVIES: (state, recommendation) => (state.recommendationMovies = recommendation),
     SET_SIMILAR_MOVIES: (state, similar) => (state.similarMovies = similar),
     SET_SEARCH: (state, search) => (state.search = search),
-    SET_RATING: (state, rating) => (state.rating = rating)
+    SET_RATINGS: (state, ratings) => (state.movie.ratings = ratings)
   },
   actions: {
     fetchActors({ commit }) {
@@ -111,12 +109,12 @@ export default {
         })
     },
     // 평점
-    create_rating({ commit }, { moviePk, rate }) {
-      const body = {rate}
+    createRating({ commit }, { moviePk, rate }) {
+      const body = { rate }
       movie
         .create_rating(moviePk, body)
         .then((res) => {
-          commit("SET_RATING", res.data);
+          commit("SET_RATINGS", res.data);
         })
         .catch((err) => {
           if (err.response.status === 404) {
@@ -124,11 +122,20 @@ export default {
           }
         })
     },
-    delete_rating({ commit }, moviePk, ratingPk) {
+    updateRating({ commit }, { moviePk, ratingPk, rate }) {
+      const body = { rate }
+      movie
+        .update_rating(moviePk, ratingPk, body)
+        .then((res) => {
+          commit("SET_RATINGS", res.data)
+        })
+        .catch((err) => console.error(err.response))
+    },
+    deleteRating({ commit }, { moviePk, ratingPk}) {
       movie
         .delete_rating(moviePk, ratingPk)
         .then((res) => {
-          commit("SET_RATING", res.data);
+          commit("SET_RATINGS", res.data);
         })
         .catch((err) => {
           if (err.response.status === 404) {
