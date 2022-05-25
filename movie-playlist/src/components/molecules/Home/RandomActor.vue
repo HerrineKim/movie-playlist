@@ -7,7 +7,6 @@
       </div>
     </router-link>
     <br>
-    <!-- <p>{{ randomActor[0].name }}</p> -->
   </div>
 </template>
 

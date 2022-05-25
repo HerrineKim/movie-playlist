@@ -3,7 +3,7 @@
     <p
     style="
     color:#696969;
-    font-face:'LeferiPoint-WhiteObliqueA'; font-size:25px"
+    font-family:'EarlyFontDiary'; font-size:25px"
     >
       나의 작은 영화관
     </p>
@@ -34,8 +34,8 @@ export default {
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-family: 'LeferiPoint-WhiteObliqueA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-family: 'MapoGoldenPier';
