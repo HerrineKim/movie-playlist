@@ -1,9 +1,9 @@
 <template>
 <!-- 홈 화면 랜덤 ost -->
-  <div>
+  <div style="padding:10px;background:#000;webkit-border-radius:30px;-moz-border-radius: 20px;border-radius: 20px;width:560px;margin:0 auto;overflow:hidden;">
     <iframe
     width="560" height="315"
-    :src="src"
+    :src="'https://www.youtube.com/embed/' + randomOst[0].url + '?autoplay=1'"
     title="YouTube video player" frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
@@ -19,7 +19,7 @@ export default {
   name: "RandomOst",
   data() {
     return {
-      src: 'https://www.youtube.com/embed/RBNVmMgt1Bg',
+      randomOst: [],
       OstInfos: [
         {
           ost: 'See You Again (폴 워커 추모 엔딩곡) (분노의 질주 : 더 세븐(Fast & Furious 7) OST)',
@@ -340,19 +340,17 @@ export default {
           movie: '어바웃 타임',
           url: 'qhanxrVLepQ'
         }
-      ] 
+      ]
     }
   },
   methods: {
-    randomOst() {
-      const partUrl = _.sampleSize(this.OstInfos, 1)
-      console.log(partUrl)
-      this.src = `https://www.youtube.com/embed/${partUrl.url}`
-      console.log(this.src)
+    randomPick() {
+      var ost = _.sampleSize(this.OstInfos, 1)
+      this.randomOst = ost
     }
   },
   created() {
-    this.randomOst()
+    this.randomPick()
   }
 }
 </script>

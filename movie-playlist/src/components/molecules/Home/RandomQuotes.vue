@@ -1,6 +1,17 @@
 <template>
   <div>
-    <p :quote="quote">{{ quote[0].sentence }} {{ quote[0].movie }}</p>
+    <p
+    style="font-family:MapoGoldenPier" :quote="quote"
+    class="quote"
+    >
+      {{ quote[0].sentence }}
+    </p>
+    <p 
+    style="font-family:MapoGoldenPier"
+    class="quoteMovie"
+    >
+      {{ quote[0].movie }}
+    </p>
   </div>
 </template>
 
@@ -135,6 +146,18 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+@font-face {
+    font-family: 'MapoGoldenPier';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoGoldenPierA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.quote {
+  font-size:30px;
+  word-break:keep-all;
+}
+.quoteMovie {
+  font-size: 18px;
+}
 </style>
