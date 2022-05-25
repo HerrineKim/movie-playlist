@@ -57,7 +57,7 @@ class RatingSerializer(serializers.ModelSerializer):
     class UserSerializer(serializers.ModelSerializer):
         class Meta:
             model = User
-            fields =('pk',)
+            fields =('pk', 'username',)
 
     user = UserSerializer(read_only=True)
 

@@ -53,7 +53,7 @@ def search_movie(request, movie_name):
     movies = get_list_or_404(Movie)
     serializer = MovieSearchSerializer(movies, many=True)
     serializer = serach(serializer.data, movie_name)
-    return Response(serializer[:5])
+    return Response(serializer[:6])
 
 @api_view(['GET'])
 def movie_detail(request, movie_pk):
@@ -186,7 +186,7 @@ def recommend_movies_names(xMovie, idx, movies):
     idx_collection = []
     for i in idx:
         distances = similarity[i]
-        listofMovies = sorted(list(enumerate(distances)), reverse=True, key=lambda x:x[1])[1:6]
+        listofMovies = sorted(list(enumerate(distances)), reverse=True, key=lambda x:x[1])[1:7]
         idx_collection.extend(listofMovies)
  
     # 인덱스를 pk로 바꾸기
