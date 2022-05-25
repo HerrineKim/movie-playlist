@@ -1,67 +1,76 @@
 <template>
-  <div>
-    <!-- 장르 태그 -->
+  <div class="container mt-4">
     <div>
-      <h3>장르별</h3>
-      <input id="crime" type="checkbox" v-model='checkedGenres' value="80">
-      <label for="crime"># 범죄<span>&#128184;</span></label>
-
-      <input id="comedy" type="checkbox" v-model='checkedGenres' value="35">
-      <label for="comedy"># 코미디</label>
-
-      <input id="adventure" type="checkbox" v-model='checkedGenres' value="12">
-      <label for="adventure"># 모험</label>
-
-      <input id="action" type="checkbox" v-model='checkedGenres' value="28">
-      <label for="action"># 액션</label>
-
-      <input id="SF" type="checkbox" v-model='checkedGenres' value="878">
-      <label for="SF"># SF</label>
-
-      <input id="animation" type="checkbox" v-model='checkedGenres' value="16">
-      <label for="animation"># 애니메이션</label>
-
-      <input id="family" type="checkbox" v-model='checkedGenres' value="10751">
-      <label for="family"># 가족</label>
-
-      <input id="drama" type="checkbox" v-model='checkedGenres' value="18">
-      <label for="drama"># 드라마</label>
-
-      <input id="romance" type="checkbox" v-model='checkedGenres' value="10749">
-      <label for="romance"># 로맨스</label>
-
-      <input id="mystery" type="checkbox" v-model='checkedGenres' value="9648">
-      <label for="mystery"># 미스터리</label>
-
-      <input id="fantasy" type="checkbox" v-model='checkedGenres' value="14">
-      <label for="fantasy"># 판타지</label>
-
-      <input id="thriller" type="checkbox" v-model='checkedGenres' value="53">
-      <label for="thriller"># 스릴러</label>
-
-      <input id="war" type="checkbox" v-model='checkedGenres' value="10752">
-      <label for="war"># 전쟁</label>
-
-      <input id="music" type="checkbox" v-model='checkedGenres' value="10402">
-      <label for="music"># 음악</label>
-
-      <input id="western" type="checkbox" v-model='checkedGenres' value="37">
-      <label for="western"># 서부</label>
-
-      <input id="TV 영화" type="checkbox" v-model='checkedGenres' value="10770">
-      <label for="TV 영화"># TV 영화</label>
-
-      <input id="horror" type="checkbox" v-model='checkedGenres' value="27">
-      <label for="horror"># 공포</label>
-
-      <input id="history" type="checkbox" v-model='checkedGenres' value="36">
-      <label for="history"># 역사</label>
-
-      <input id="documentary" type="checkbox" v-model='checkedGenres' value="99">
-      <label for="documentary"># 다큐멘터리</label>
-      <!-- 기분 태그 -->
-      {{ checkedGenres }}
+      키워드를 골라
+      나만의 무비플레이스트를
+      완성하세요
+      * 키워드 종류 당 1개 선택 가능
     </div>
+    
+    <!-- 장르 태그 -->
+    <div class="container">
+      <h3>장르별</h3>
+      <div class="container">
+        <input class="form-check-input" id="crime" type="checkbox" v-model='checkedGenres' value="80">
+        <label class="form-check-label" for="crime"># 범죄<span>&#128184;</span></label>
+
+        <input id="comedy" type="checkbox" v-model='checkedGenres' value="35">
+        <label for="comedy"># 코미디</label>
+
+        <input id="adventure" type="checkbox" v-model='checkedGenres' value="12">
+        <label for="adventure"># 모험</label>
+
+        <input id="action" type="checkbox" v-model='checkedGenres' value="28">
+        <label for="action"># 액션</label>
+
+        <input id="SF" type="checkbox" v-model='checkedGenres' value="878">
+        <label for="SF"># SF</label>
+
+        <input id="animation" type="checkbox" v-model='checkedGenres' value="16">
+        <label for="animation"># 애니메이션</label>
+
+        <input id="family" type="checkbox" v-model='checkedGenres' value="10751">
+        <label for="family"># 가족</label>
+
+        <input id="drama" type="checkbox" v-model='checkedGenres' value="18">
+        <label for="drama"># 드라마</label>
+<br>
+        <input id="romance" type="checkbox" v-model='checkedGenres' value="10749">
+        <label for="romance"># 로맨스</label>
+
+        <input id="mystery" type="checkbox" v-model='checkedGenres' value="9648">
+        <label for="mystery"># 미스터리</label>
+
+        <input id="fantasy" type="checkbox" v-model='checkedGenres' value="14">
+        <label for="fantasy"># 판타지</label>
+
+        <input id="thriller" type="checkbox" v-model='checkedGenres' value="53">
+        <label for="thriller"># 스릴러</label>
+
+        <input id="war" type="checkbox" v-model='checkedGenres' value="10752">
+        <label for="war"># 전쟁</label>
+
+        <input id="music" type="checkbox" v-model='checkedGenres' value="10402">
+        <label for="music"># 음악</label>
+
+        <input id="western" type="checkbox" v-model='checkedGenres' value="37">
+        <label for="western"># 서부</label>
+
+        <input id="TV 영화" type="checkbox" v-model='checkedGenres' value="10770">
+        <label for="TV 영화"># TV 영화</label>
+
+        <input id="horror" type="checkbox" v-model='checkedGenres' value="27">
+        <label for="horror"># 공포</label>
+
+        <input id="history" type="checkbox" v-model='checkedGenres' value="36">
+        <label for="history"># 역사</label>
+
+        <input id="documentary" type="checkbox" v-model='checkedGenres' value="99">
+        <label for="documentary"># 다큐멘터리</label>
+      </div>
+
+    </div>
+
     <!-- 상황 태그 -->
     <div>
       <h3>상황별</h3>
@@ -97,7 +106,7 @@
 
       <input id="food" type="checkbox" v-model='checkedCasetags' value="11">
       <label for="food"># 배고플 때 맛있는 음식과 함께</label>
-      {{ checkedCasetags }}
+
     </div>
     <!-- 기분 태그 -->
     <div>
@@ -128,15 +137,84 @@
 
       <input id="teen" type="checkbox" v-model='checkedMoodtags' value="9">
       <label for="teen"># 하이틴 시절이 생각나는</label>
-      {{ checkedMoodtags }}
     </div>
+
+    <!-- 실행 버튼 -->
     <div>
       <button @click="fetchGenreMovies(), fetchMoodtagMovies(), fetchCasetagMovies()">
         나만의 무플리를 만들어줘!
       </button>
     </div>
+
+
     <!-- 영화 여기에 나타내기 -->
-    <div v-if="ok1">
+
+    <div v-if="ok1" class="container py-3">
+      <p>기분</p>
+      <div class="row mt-5">
+        <div v-for="movie in moodtag_movies.movies" :key="movie.poster_path" 
+          class="col-12 col-sm-4 col-md-3"
+          >
+          <div class="card border mb-3">
+              <img
+              class="card-img-top"
+              :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
+              >
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">
+                {{ movie.tagline }}
+              </p>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+
+    <div v-if="ok2" class="container py-3">
+      <p>상황</p>
+      <div class="row mt-5">
+        <div v-for="movie in casetag_movies.movies" :key="movie.poster_path" 
+          class="col-12 col-sm-4 col-md-3"
+          >
+          <div class="card border mb-3">
+              <img
+              class="card-img-top"
+              :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
+              >
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">
+                {{ movie.tagline }}
+              </p>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+
+    <div v-if="ok3" class="container py-3">
+      <p>장르</p>
+      <div class="row mt-5">
+        <div v-for="movie in genre_movies.movies" :key="movie.poster_path" 
+          class="col-12 col-sm-4 col-md-3"
+          >
+          <div class="card border mb-3">
+              <img
+              class="card-img-top"
+              :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
+              >
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">
+                {{ movie.tagline }}
+              </p>      
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+    <!-- <div v-if="ok1">
       <li v-for="movie in moodtag_movies.movies" :key=movie.title>
         {{ movie.title}}
       </li>
@@ -150,7 +228,7 @@
       <li v-for="movie in genre_movies.movies" :key=movie.title>
         {{ movie.title}}
       </li>
-    </div>
+    </div> -->
   </div>
 
 </template>

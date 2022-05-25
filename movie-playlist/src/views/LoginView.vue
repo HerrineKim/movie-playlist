@@ -1,23 +1,27 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <h1>Login</h1>
+    <br>
+    <br>
 
     <account-error-list v-if="isAuthError"></account-error-list>
+    
+    <div class="container">
+      <div class="container col-5 my-3">
+        <form @submit.prevent="login(credentials)">
+          <div class="form-outline">
+            <label class="form-label" for="username"></label>
+            <input placeholder="username" class="form-control" v-model="credentials.username" type="text" id="username" required>
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="password"></label>
+            <input placeholder="password" class="form-control" v-model="credentials.password" type="password" id="password" required>
+          </div>
 
-    <form @submit.prevent="login(credentials)">
-      <div>
-        <label for="username">username: </label>
-        <input v-model="credentials.username" type="text" id="username" required>
+          <button class="btn btn-primary btn-block mb-4">로그인</button>
+        </form>
       </div>
-
-      <div>
-        <label for="password">password: </label>
-        <input v-model="credentials.password" type="password" id="password" required>
-      </div>
-
-      <button>Login</button>
-    </form>
+    </div>
   </div>
 </template>
 

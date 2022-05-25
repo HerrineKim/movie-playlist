@@ -1,58 +1,38 @@
 <template>
   <div>
     <!-- YouTube iframe -->
-    <div style="width:140px; height:100px">
-    </div>
-    <div class="youtube" style="margin-right:50px padding-top:70px; padding-right:20px">
+    <div class="youtube" style="margin-top:43px; margin-right:6px; padding-right:10px">
       <iframe
-      width="240" height="180"
+      width="215" height="160"
       :src="src"
       title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
       >
       </iframe>
-      <div style="width:60px; height:30px"></div>
     </div>
 
     <!-- 노래 목록 -->
     <div class="container" style="margin-top: 380px;">
-      <div v-for="OstInfo in OstInfos" :key="OstInfo.ost">
-        {{ OstInfo.ost }} {{ OstInfo.artist }} {{ OstInfo.movie }}
-        <button @click="selectVideo(OstInfo)">비디오 나와랏</button>
-      </div>
+      <table class="table table-dark" style="background: none;">
+        <thead>
+          <tr>
+            <th scope="col">노래 이름</th>
+            <th scope="col">아티스트</th>
+            <th scope="col">영화 제목</th>
+            <th scope="col">듣기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="OstInfo in OstInfos" :key="OstInfo.ost">
+            <th scope="row">{{ OstInfo.ost }}</th>
+            <td>{{ OstInfo.artist }}</td>
+            <td>{{ OstInfo.movie }}</td>
+            <td><button @click="selectVideo(OstInfo)">video</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="table table-dark table-striped">
-      <thead>
-        <tr>
-          <th scope="col">노래 이름</th>
-          <th scope="col">아티스트</th>
-          <th scope="col">영화 제목</th>
-          <th scope="col">듣기</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-    
-
   </div>
 </template>
 

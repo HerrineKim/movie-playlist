@@ -37,7 +37,7 @@ export default {
           // currentUser setting
           dispatch("fetchCurrentUser")
           // page 이동
-          router.push({ name: "first" })
+          router.push({ name: "HomeView" })
         })
         .catch((err) => {
           // console.error(err.response.data)
