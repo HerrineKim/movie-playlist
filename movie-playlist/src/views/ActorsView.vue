@@ -2,9 +2,12 @@
   <div class="actors">
     <nav-bar></nav-bar>
     <div class="container">
-      <div style>
-        <p>PEOPLE</p>
-      </div>
+      <br>
+      <p style="font-size:40px; font-family:EarlyFontDiary;">
+        PEOPLE
+      </p>
+      <br>
+      <br>
 
       <!-- 배우 목록 -->
       <div class="container">
@@ -65,5 +68,24 @@ export default {
     font-family: "GEORGIA";
     font-weight: 400;
     src: url("@/assets/fonts/GEORGIA.TTF") format("ttf");
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'MapoGoldenPier';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoGoldenPierA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+  @font-face {
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
   }
 </style>

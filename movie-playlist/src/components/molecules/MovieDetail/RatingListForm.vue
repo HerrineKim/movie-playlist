@@ -1,9 +1,9 @@
 <template>
   <!-- 평점 -->
   <form @submit.prevent="onSubmit">
-    <label for="rating">평점을 입력하세요</label>
+    <label for="rating">나의 평점</label>
     <input v-model="content" type="number" id="rating" min="1" max="9" required>
-    <button>평점입력</button>
+    <button>등록</button>
   </form>
 </template>
 

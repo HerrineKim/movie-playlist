@@ -30,15 +30,15 @@ export default {
     fetchActors () {
       this.$store.dispatch('fetchActors')
     },
-    recommendation () {
-      this.$store.dispatch('recommendation')
-    },
+    // recommendation () {
+    //   this.$store.dispatch('recommendation')
+    // },
   },
   created () {
     this.fetchBoxoffice()
     this.fetchActors()
     this.fetchCurrentUser()
-    this.recommendation({ userPk: this.userPk })
+    // this.recommendation({ userPk: this.userPk })
 
   },
 }

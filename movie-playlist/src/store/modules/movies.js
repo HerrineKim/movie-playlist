@@ -74,7 +74,7 @@ export default {
         .recommendation(userPk)
         .then((res) => {
           commit("SET_RECOMMENDATION_MOVIES", res.data);
-          console.log(res.data)
+          // console.log(res.data)
         })
         .catch((err) => {
           if (err.response.status === 404) {
@@ -100,7 +100,7 @@ export default {
         .search(movieName)
         .then((res) => {
           commit("SET_SEARCH", res.data);
-          console.log(res.data);
+          // console.log(res.data);
         })
         .catch((err) => {
           if (err.response.status === 404) {

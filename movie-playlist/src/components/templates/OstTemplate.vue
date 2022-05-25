@@ -387,7 +387,7 @@ export default {
   },
   methods: {
     selectVideo(OstInfo) {
-      this.src = `https://www.youtube.com/embed/${OstInfo.url}?autoplay=1&loop=1&showinfo=0`
+      this.src = `https://www.youtube.com/embed/${OstInfo.url}?autoplay=1&loop=1&showinfo=0&controls=0`
         if (document.body.scrollTop!=0 || document.documentElement.scrollTop!=0){
             window.scrollBy(0,-1000);
             var timeOut=setTimeout('scrollToTop()',10);
