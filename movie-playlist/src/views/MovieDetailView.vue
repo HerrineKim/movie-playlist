@@ -1,6 +1,9 @@
 <template>
   <div>
+    <!-- 영화 detail -->
     <h1>{{ movie.title }}</h1>
+
+    <!-- 좋아요 -->
     <div>
       <div v-if="is_liked">
         <i class="fas fa-heart"
@@ -9,23 +12,18 @@
         </i>
       </div>
       <div v-else>
-          <i class="far fa-heart"
-          @click="likeMovie"
-          >
-          </i>
+        <i class="far fa-heart"
+        @click="likeMovie"
+        >
+        </i>
       </div>
     </div>
-    <!-- <div>
-      평점
-    </div> -->
+
+    <!-- 평점 -->
     <div>
-      <p>{{ rate }}</p>
-      <form @submit.prevent="createRating">
-        <label for="rating">평점을 입력하세요</label>
-        <input v-model="rate" type="text" id="rating">
-      </form>
-      <button>평점 삭제</button>
+      <rating-list :ratings="movie.ratings"></rating-list>
     </div>
+    
     <div>
       <p v-for="sim in similarMovies" :key="sim">
         {{ sim.title }}
@@ -35,12 +33,14 @@
 </template>
 
 <script>
+import RatingList from "@/components/organisms/MovieDetail/RatingList.vue"
+
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'MovieDetailView',
   components: {
-    
+    RatingList
   },
   data() {
     return {
@@ -54,20 +54,14 @@ export default {
   },
   computed: {
     ...mapGetters(['movie', 'similarMovies']),
-    // moviePosterUrl() {
-    //   return ``
-    // }
+
   },
   methods: {
-    ...mapActions(['similar', 'fetchMovie', 'create_rating']),
+    ...mapActions(['similar', 'fetchMovie']),
     likeMovie() {
       const moviePk = this.moviePk
       this.$store.dispatch('movieLike', moviePk)
       this.is_liked = !this.is_liked
-    },
-    createRating() {
-      const payload = this.newRate
-      this.create_rating(payload)
     },
   },
   created() {
