@@ -1,11 +1,25 @@
 <template>
-  <div class="home">
-    <div>
-      <div v-for="box in boxoffice" :key="box.rnum"
+  <div class="boxoffice">
+    <h3
+    style="font-family: 'GimpoGothicBold00';"
+    >
+      박스오피스
+    </h3>
+    <div
+    v-for="box in boxoffice" :key="box.rnum"
+    >
+      <span>
+        {{ box.rank }}
+      </span> 
+      <span>
+        {{ box.movieNm }}
+      </span>
+      <span
+      v-if="box.rankOldAndNew == 'NEW'"
       >
-      {{ box.rank }} {{ box.movieNm }} 
-      <span v-if="box.rankOldAndNew == 'NEW'" >{{ box.rankOldAndNew }}</span>
-      </div>
+        {{ box.rankOldAndNew }}
+      </span>
+      <hr>
     </div>
   </div>
 </template>
@@ -23,3 +37,15 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  .boxoffice {
+    text-align: left;
+  }
+  @font-face {
+    font-family: 'GimpoGothicBold00';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/GimpoGothicBold00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>

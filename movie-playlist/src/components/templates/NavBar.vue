@@ -35,7 +35,7 @@
         </li>
         <li v-if="isLoggedIn" class="nav-item">
           <router-link class="nav-link" :to="{ name: 'profile', params: { username } }">
-            내 정보
+            마이페이지
           </router-link>
         </li>
       </ul>
