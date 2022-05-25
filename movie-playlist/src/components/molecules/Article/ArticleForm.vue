@@ -1,7 +1,5 @@
 <template>
   <form @submit.prevent="onSubmit">
-    {{ article }}
-    {{ newArticle }}
     <div>
       <label for="title">title: </label>
       <input type="text" id="title" v-model="newArticle.title">

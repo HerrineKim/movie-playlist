@@ -1,6 +1,12 @@
 <template>
   <div>
     <nav-bar></nav-bar>
+    <div>
+      <router-link :to="{ name: 'articleNew' }">
+        <button>게시글 작성</button>
+      </router-link>
+    </div>
+    
     <ul>
       <li v-for="article in articles" :key="article.pk">
         <!-- User -->

@@ -1,25 +1,27 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <h1>{{ profile.username }}</h1>
-
-    <h2>작성한 글</h2>
-    <ul>
-      <li v-for="article in profile.articles" :key="article.id">
-        <router-link :to="{ name: 'article', params: { articlePk: article.id } }">
-          {{ article.title }}
-        </router-link>
-      </li>
-    </ul>
-
-    <h2>좋아요 한 글</h2>
-    <ul>
-      <li v-for="article in profile.like_articles" :key="article.id">
-        <router-link :to="{ name: 'article', params: { articlePk: article.id } }">
-          {{ article.title }}
-        </router-link>
-      </li>
-    </ul>
+    <div class="container">
+      <div class="container col-5 my-3 text-align:left">  
+        <h3>{{ profile.username }}님의 프로필</h3>
+      </div>
+      <h2>저도 이 영화 좋아합니다</h2>
+      <div class="row">
+        <div v-for="movie in profile.like_movies" :key="movie.id"
+        class="col-12 col-sm-4 col-md-3">
+          <div class="card border mb-3">
+            <img
+              class="card-img-top"
+              :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path" alt=""
+              >
+          </div>
+          <div class="card-">
+            <hr>
+            <h5 class="card-">{{ movie.title }}</h5>  
+          </div>  
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
