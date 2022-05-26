@@ -287,6 +287,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # Django Secret KEY
-secrets.json
+# secrets.json/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,python,django
