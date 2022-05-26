@@ -3,7 +3,44 @@
     <nav-bar></nav-bar>
     <div class="container">
       <!-- 영화 detail -->
-      <h1>{{ movie.title }}</h1>
+      <div class="mt-5">
+        <h1 style="font-size:70px; font-family:GimpoGothicBold00">{{ movie.title }}</h1>
+      </div>
+      <div class="mt-5 container row">
+        <div class="col-6">
+          <img
+          style="border-radius: 10px; box-shadow: 1px 1px 1px 0" 
+          :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path" alt="">
+        </div>
+        <div class="col-6" style="text-align:left;">
+          <hr>
+          <div>
+            장르 |
+            <span v-for="genre in movie.genres" :key="genre">
+              {{ genre.name }}
+            </span>
+          </div>
+          <div>
+            개봉일 |
+            {{ movie.release_date | yyyyMMdd }}
+          </div>
+          <div>
+            상영시간 |
+            {{ movie.runtime }}분
+          </div>
+          <div>
+            배우 | 
+            <span v-for="actor in movie.actors" :key="actor">
+              {{ actor.name }}
+            </span>
+          </div>
+          <span>줄거리| </span>
+          <div>
+            {{ movie.overview}}
+          </div>
+          <hr>
+        </div>
+      </div>
 
       <!-- 좋아요 -->
       <div>
@@ -43,7 +80,7 @@
                 :src="'https://image.tmdb.org/t/p/w300/' + sim.poster_path" alt=""
                 >
               </router-link>
-              <div class="card-body">
+              <div style="font-size:13px; font-family: 'GimpoGothicBold00';" class="card-body">
                 <hr>
                 <h5 class="card-title">{{ sim.title }}</h5>
               </div>
@@ -65,6 +102,33 @@ export default {
   name: 'MovieDetailView',
   components: {
     RatingList, NavBar
+  },
+  filters : {  
+          // filter로 쓸 filter ID 지정
+    yyyyMMdd : function(value){ 
+            // 들어오는 value 값이 공백이면 그냥 공백으로 돌려줌
+            if(value == '') return '';
+        
+            // 현재 Date 혹은 DateTime 데이터를 javaScript date 타입화
+            var js_date = new Date(value);
+
+            // 연도, 월, 일 추출
+            var year = js_date.getFullYear();
+            var month = js_date.getMonth() + 1;
+            var day = js_date.getDate();
+
+            // 월, 일의 경우 한자리 수 값이 있기 때문에 공백에 0 처리
+            if(month < 10){
+              month = '0' + month;
+            }
+
+            if(day < 10){
+              day = '0' + day;
+            }
+
+            // 최종 포맷 (ex - '2021-10-08')
+            return year + '-' + month + '-' + day;
+    }
   },
   data() {
     return {
@@ -92,7 +156,7 @@ export default {
     this.moviePk = this.$route.params.moviePk
     // console.log(this.moviePk)
     this.fetchMovie({ moviePk: this.moviePk })
-    // console.log(this.moviePk)
+    console.log(this.movie)
     this.similar({ moviePk: this.moviePk })
   }
 }
