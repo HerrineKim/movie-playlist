@@ -13,7 +13,7 @@ if(month < 10){
 if(day < 10){
     day = "0"+day;
 }
-var today = year+""+month+""+day - 10
+var today = year+""+month+""+day - 1
 var todaystr = today.toString()
 
 // 다음은?
@@ -43,7 +43,7 @@ export default {
       })
       .then(res => {
         commit('FETCH_BOXOFFICE', res.data.boxOfficeResult.dailyBoxOfficeList)
-        // console.log(res.data.boxOfficeResult)
+        console.log(res.data.boxOfficeResult)
       })
       .catch(err => console.log(err))
     },
