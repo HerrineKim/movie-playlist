@@ -53,7 +53,7 @@ export default {
           commit("SET_TOKEN", token)
           localStorage.setItem("token", token)
           dispatch("fetchCurrentUser")
-          router.push({ name: "articles" })
+          router.push({ name: "HomeView" })
         })
         .catch((err) => {
           commit("SET_AUTH_ERROR", err.response.data)

@@ -8,8 +8,8 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <div>
-            <router-link style="color:#6441A5; font-family: 'GmarketSansMedium';" class="nav-link" :to="{ name: 'HomeView' }">
-              무플리 홈
+            <router-link style="color: #005aa7; font-family: 'GmarketSansMedium';" class="nav-link" :to="{ name: 'HomeView' }">
+              HOME
               <img style="width:22px; height:22px" src="@/assets/images/HomeIcon.png" alt="">
             </router-link>
           </div><br>

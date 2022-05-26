@@ -8,7 +8,7 @@
       <hr>
       <div class="box-content card">
         <div class="card-body" style="text-align:left;">
-          <p style="font-family: 'GmarketSansLight'; font-size:18px;">
+          <p style="font-family: 'GmarketSansMedium'; font-size:18px;">
             {{ article.content }}
           </p>
         </div>

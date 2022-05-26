@@ -1,6 +1,12 @@
 <template>
   <div style="text-align:left;" class="container mt-4">
-    <div>
+    <div style="margin-bottom:100px;text-align:left;font-family:MapoGoldenPier">
+      <h2>
+        태그를 선택하고
+      </h2>
+      <h2>
+        나만의 <span style="color:#005aa7">무비플레이리스트</span>를
+      </h2>
       <h2>
         만들어보세요
       </h2>
@@ -9,9 +15,12 @@
       <!-- 장르별 태그 dropdown -->
       <div class="faq-content">
         <button @click="openCloseAnswer1('que-1')" class="question1 btn btn-outline-primary" id="que-1">
-          <span id="que-1-toggle">+</span><span>장르별 태그</span>
+          <span id="que-1-toggle">+</span>
+          <span
+          style="font-family:GmarketSansMedium;">
+            장르별 태그</span>
         </button>
-        <div class="answer" id="ans-1">
+        <div class="answer" style="font-family:GmarketSansMedium;" id="ans-1">
           <div class="container mt-3">
             <div style="text-align:left" class="container">
               
@@ -20,11 +29,10 @@
                 <p><span>&#128184;</span>범죄</p>
               </label>
 
-              <label for="comedy" class="check">
+              <label for="comedy" class="check" style="margin-right:10px">
                 <input type="checkbox" id="comedy" v-model='checkedGenres' value="35">
                 <p><span>&#128518;</span>코미디</p>
               </label>
-
               <label for="adventure" class="check">
                 <input type="checkbox" id="adventure" v-model='checkedGenres' value="12">
                 <p><span>&#128511;</span>모험</p>
@@ -116,10 +124,13 @@
       <!-- 상황별 태그 dropdown -->
       <div class="mt-3 faq-content">
         <button @click="openCloseAnswer2('que-2')" class="question2 btn btn-outline-primary" id="que-2">
-          <span id="que-2-toggle">+</span><span>상황별 태그</span>
+          <span id="que-2-toggle"
+          >+</span>
+          <span           style="font-family:GmarketSansMedium;">
+            상황별 태그</span>
         </button>
         <div class="answer" id="ans-2">
-          <div class="container mt-3">
+          <div class="container mt-3" style="font-family:GmarketSansMedium;">
             <div style="text-align:left" class="container">
               
               <label for="withfamily" class="check">
@@ -184,11 +195,16 @@
       <!-- 기분별 태그 dropdown -->
       <div class="mt-3 faq-content">
         <button @click="openCloseAnswer3('que-3')" class="question3 btn btn-outline-primary" id="que-3">
-          <span id="que-3-toggle">+</span><span>기분별 태그</span>
+          <span id="que-3-toggle">+</span>
+          <span
+          style="font-family:GmarketSansMedium;"
+          >기분별 태그</span>
         </button>
         <div class="answer" id="ans-3">
           <div class="container mt-3">
-            <div style="text-align:left" class="container">
+            <div
+            style="text-align:left;font-family:GmarketSansMedium;"
+            class="container">
 
               <label for="cry" class="check">
                 <input type="checkbox" id="cry" v-model='checkedMoodtags' value="1">
@@ -239,43 +255,21 @@
         </div>
       </div>
     </div>
-
-    <!-- 기분 태그 -->
-
-
+    <br>
     <!-- 무플리 만드는 버튼 -->
     <div>
-      <button @click="fetchGenreMovies(), fetchMoodtagMovies(), fetchCasetagMovies()">
-        나만의 무비플레이스트 만들기
+      <button
+      class="btn btn-lg btn-purple-moon"
+      @click="fetchGenreMovies(), fetchMoodtagMovies(), fetchCasetagMovies()">
+        만들기
       </button>
     </div>
-
-    <!-- 장르별 플레이리스트 -->
-    <div v-if="ok3" class="container py-3">
-      <p>장르</p>
-      <div class="row mt-5">
-        <div v-for="movie in genre_movies.movies" :key="movie.poster_path" 
-          class="col-12 col-sm-4 col-md-3"
-          >
-          <div class="card border mb-3">
-              <img
-              class="card-img-top"
-              :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
-              >
-            <div class="card-body">
-              <h5 class="card-title">{{ movie.title }}</h5>
-              <p class="card-text">
-                {{ movie.tagline }}
-              </p>      
-            </div>
-          </div>
-        </div>  
-      </div>
-    </div>
+    <br>
+    <br>
+        <p style="font-family:GmarketSansMedium">* 기분별, 상황별, 장르별 영화가 순서대로 표시됩니다.</p>
 
     <!-- 기분별 플레이리스트 -->
     <div v-if="ok1" class="container py-3">
-      <p>기분</p>
       <div class="row mt-5">
         <div v-for="movie in moodtag_movies.movies" :key="movie.poster_path" 
           class="col-12 col-sm-4 col-md-3"
@@ -286,8 +280,8 @@
               :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
               >
             <div class="card-body">
-              <h5 class="card-title">{{ movie.title }}</h5>
-              <p class="card-text">
+              <h5 class="card-title" style="font-family:GmarketSansMedium">{{ movie.title }}</h5>
+              <p class="card-text" style="font-family:GmarketSansMedium">
                 {{ movie.tagline }}
               </p>
             </div>
@@ -298,7 +292,6 @@
 
     <!-- 상황별 플레이리스트 -->
     <div v-if="ok2" class="container py-3">
-      <p>상황</p>
       <div class="row mt-5">
         <div v-for="movie in casetag_movies.movies" :key="movie.poster_path" 
           class="col-12 col-sm-4 col-md-3"
@@ -309,10 +302,32 @@
               :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
               >
             <div class="card-body">
-              <h5 class="card-title">{{ movie.title }}</h5>
-              <p class="card-text">
+              <h5 class="card-title" style="font-family:GmarketSansMedium">{{ movie.title }}</h5>
+              <p class="card-text" style="font-family:GmarketSansMedium">
                 {{ movie.tagline }}
               </p>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+
+    <!-- 장르별 플레이리스트 -->
+    <div v-if="ok3" class="container py-3">
+      <div class="row mt-5">
+        <div v-for="movie in genre_movies.movies" :key="movie.poster_path" 
+          class="col-12 col-sm-4 col-md-3"
+          >
+          <div class="card border mb-3">
+              <img
+              class="card-img-top"
+              :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
+              >
+            <div class="card-body">
+              <h5 class="card-title" style="font-family:GmarketSansMedium">{{ movie.title }}</h5>
+              <p class="card-text" style="font-family:GmarketSansMedium">
+                {{ movie.tagline }}
+              </p>      
             </div>
           </div>
         </div>  
@@ -430,6 +445,7 @@ export default {
 </script>
 
 <style scoped>
+
   .answer {
     display: none;
     padding-bottom: 30px;
@@ -459,6 +475,7 @@ export default {
 
   label.check {
   cursor: pointer;
+  margin-right:10px;
   }
   label.check input {
     position: absolute;
@@ -469,15 +486,23 @@ export default {
   }
   label.check p {
     padding: 7px 14px;
-      border: 2px solid #8f37aa;
+      border: 2px solid #7474BF;
       display: inline-block;
-      color: #8f37aa;
+      color: #7474BF;
       border-radius: 3px;
       text-transform: uppercase;
   }
   label.check input:checked + p {
-    border-color: #8f37aa;
-      background-color: #8f37aa;
+    border-color: #7474BF;
+      background-color: #7474BF;
       color: #fff;
   }
+
+.btn-purple-moon {
+    background: #7474BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    font-family:MapoGoldenPier;
+}
 </style>

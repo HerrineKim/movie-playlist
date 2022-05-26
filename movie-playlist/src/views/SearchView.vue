@@ -24,7 +24,7 @@
 
       <!-- 검색결과 -->
       <div class="row mt-5">
-        <p style="font-family:Go; text-align:left">
+        <p style="font-size:18px; font-family:GmarketSansMedium; text-align:left">
           * 검색하신 제목과 유사도가 가장 높은 6개의 영화를 보여드립니다</p>
         <div v-for="movie in search" :key="movie.pk" 
         class="col-12 col-sm-4 col-md-3"
@@ -40,7 +40,7 @@
             </router-link>
             <div class="card-body">
               <hr>
-              <h5 class="card-title">{{ movie.title }}</h5>
+              <h5 style="font-family:GmarketSansMedium;" class="card-title">{{ movie.title }}</h5>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@
       
       <!-- recommendationMovie -->
       <div class="row mt-5">
-        <p style="font-family:MapoGoldenPier; text-align:left">
+        <p style="font-size:18px; font-family:GmarketSansMedium; text-align:left">
           * 좋아요 누르신 영화를 기반으로 추천드리는 영화입니다 </p>
         <div v-for="recommendationMovie in recommendationMovies" :key="recommendationMovie.title" 
         class="col-12 col-sm-4 col-md-3"
@@ -64,7 +64,7 @@
             </router-link>
             <div class="card-body">
               <hr>
-              <h5 class="card-title">{{ recommendationMovie.title }}</h5>
+              <h5 style="font-family:GmarketSansMedium;" class="card-title">{{ recommendationMovie.title }}</h5>
             </div>
           </div>
         </div>

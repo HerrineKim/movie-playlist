@@ -6,47 +6,59 @@
       <div class="mt-5">
         <h1 style="font-size:70px; font-family:GimpoGothicBold00">{{ movie.title }}</h1>
       </div>
-      <div class="mt-5 container row">
-        <div class="col-6">
+      <div style="font-size:19px; font-family:GmarketSansMedium;" class="mt-5 container row">
+        <div class="mt-2 col-6">
           <img
           style="border-radius: 10px; box-shadow: 1px 1px 1px 0" 
-          :src="'https://image.tmdb.org/t/p/w300/' + movie.poster_path" alt="">
+          :src="'https://image.tmdb.org/t/p/w400/' + movie.poster_path" alt="">
         </div>
-        <div class="col-6" style="text-align:left;">
+        <div class="col-6"
+        style="margin-top:0; text-align:left;">
           <hr>
+
+            <p>
+              <span style="color: #808080">
+                장르 |
+              </span>
+              <span 
+              v-for="genre in movie.genres" :key="genre">
+                {{ genre.name }},
+              </span>
+            </p>
+            <p>
+              <span style="color: #808080">
+                개봉일 |
+              </span>
+              {{ movie.release_date | yyyyMMdd }}
+            </p>
+            <p>
+              <span style="color: #808080">
+                상영시간 |
+              </span>
+              {{ movie.runtime }}분
+            </p>
+
           <div>
-            장르 |
-            <span v-for="genre in movie.genres" :key="genre">
-              {{ genre.name }}
-            </span>
+            <p>
+              <span style="color: #808080">
+                배우 |
+              </span>
+              <span v-for="actor in movie.actors" :key="actor">
+                {{ actor.name }},
+              </span>
+            </p>
           </div>
-          <div>
-            개봉일 |
-            {{ movie.release_date | yyyyMMdd }}
-          </div>
-          <div>
-            상영시간 |
-            {{ movie.runtime }}분
-          </div>
-          <div>
-            배우 | 
-            <span v-for="actor in movie.actors" :key="actor">
-              {{ actor.name }}
-            </span>
-          </div>
-          <span>줄거리| </span>
-          <div>
+          <p>
+            <span style="color: #808080">줄거리 |</span>
             {{ movie.overview}}
-          </div>
+          </p>
           <hr>
         </div>
       </div>
 
       <!-- 좋아요 -->
-      <div class="mt-3" style="float:right;">
-        <span>
-          좋아요
-        </span>
+      <div class="mt-5"
+      style="font-family:MapoGoldenPier; float:right; margin-right:20px;">
         <span>
           <div v-if="is_liked">
             <i class="fas fa-heart"
@@ -70,8 +82,8 @@
       
       <!-- 비슷한 영화 -->
       <div class="row mt-5">
-          <p style="font-family:MapoGoldenPier; text-align:left">
-            이 영화를 재미있게 봤다면?
+          <p style="font-size: 18px; font-family:GmarketSansMedium; text-align:left">
+            * 이 영화를 재미있게 봤다면?
           </p>
           <div v-for="sim in similarMovies" :key="sim.poster_path" 
           class="col-12 col-sm-4 col-md-3"
@@ -167,5 +179,8 @@ export default {
 </script>
 
 <style>
-
+  .fa-heart {
+    font-size:50px;
+    color: #cb2d3e
+  }
 </style>

@@ -8,7 +8,7 @@
       나의 작은 영화관
     </p>
     <p class="moply" style="
-    color: #5d4157;
+    color: #005ea7;
     letter-spacing: 6px;
     font-family:'MapoGoldenPier'; font-size:42px">
       무비플레이리스트

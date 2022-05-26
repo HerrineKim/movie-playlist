@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
-    <p style="font-family: 'GimpoGothicBold00';">이 배우, 만나보실래요?</p>
+  <div style="margin-right: 15px;"
+  >
     <router-link :to="{ name: 'actor', params: { actorPk: randomActor[0].id } }">
-      <div class="box" style="backgroud: #FFFF">
-        <img class="profile" :src="'https://www.themoviedb.org/t/p/w150_and_h225_bestv2' + randomActor[0].profile_path" alt="">
-      </div>
+      <img 
+      class="profile" 
+      :src="'https://www.themoviedb.org/t/p/w150_and_h225_bestv2' + randomActor[0].profile_path"
+      alt="">
     </router-link>
-    <br>
   </div>
 </template>
 
@@ -39,17 +39,10 @@ export default {
 </script>
 
 <style scoped>
-.box {
-  width: 150px;
-  height: 225px;
-  border-radius: 20%;
-  overflow: hidden;
-}
-
 .profile {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 122%;
+  border-radius: 30px;
+  margin-right: 220px;
 }
 
 .container {

@@ -1,23 +1,25 @@
 <template>
-  <div class="boxoffice">
+  <div 
+  style="border-radius:30px; margin-bottom:5px;"
+  class="boxoffice">
     <h3
-    style="font-family: 'GimpoGothicBold00';"
+    style="color:white; font-family: 'GimpoGothicBold00';"
     >
       박스오피스
     </h3>
     <div
     v-for="box in boxoffice" :key="box.rnum"
     >
-      <span style="line-height: font-family: 'GmarketSansMedium';">
+      <span style="color:white; line-height: font-family: 'GmarketSansMedium';">
         {{ box.rank }}
       </span> 
-      <span style="font-family: 'GmarketSansMedium';">
+      <span style="color:white; font-family: 'GmarketSansMedium';">
         {{ box.movieNm }}
       </span>
-      <span style="font-family: 'GmarketSansMedium';"
+      <span style="color:white; font-family: 'GmarketSansMedium';"
       v-if="box.rankOldAndNew == 'NEW'"
       >
-        <button class=" btn btn-outline-primary btn-sm">
+        <button style="color:#005aa7;" class="btn btn-border-none btn-sm">
           {{ box.rankOldAndNew }}
         </button>
       </span>
@@ -42,6 +44,7 @@ export default {
 <style scoped>
   .boxoffice {
     text-align: left;
+    background-color: #0000;
   }
   @font-face {
     font-family: 'GimpoGothicBold00';

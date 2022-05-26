@@ -5,7 +5,7 @@
         <router-link :to="{ name: 'profile', params: { username: comment.user.username } }">
           {{ comment.user.username }}
         </router-link>: 
-        <div style="font-family: 'GmarketSansLight';" v-if="!isEditing">{{ payload.content }}</div>
+        <div style="font-family: 'GmarketSansMedium';" v-if="!isEditing">{{ payload.content }}</div>
 
         <span>
           <div v-if="isEditing">

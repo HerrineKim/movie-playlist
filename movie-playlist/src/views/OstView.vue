@@ -20,10 +20,10 @@
 
 <style scoped>
 .ost  {
-  background-color:black;
   background-image:url(@/assets/images/Header2.png);
   background-repeat: no-repeat;
   background-position: center top;
+  background-color: black;
 }
 
 </style>

@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div 
+  style="text-align:left; margin-left:40px; margin-top:60px; margin-right:60px;">
     <p
     style="font-family:MapoGoldenPier" :quote="quote"
     class="quote"

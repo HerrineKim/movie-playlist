@@ -3,7 +3,9 @@
   <div class="row g-3 align-items-center">
     <form @submit.prevent="onSubmit">
       <div class="col-auto">
-        <label class="form-label" for="rating">* 1~10점 사이의 평점을 등록하세요 </label>
+        <label
+        style="font-family:GmarketSansMedium;"
+        class="form-label" for="rating">* 1~10점 사이의 평점을 등록하세요 </label>
       </div>
       <div class="col-auto" style="margin-left:840px">
         <input class="form-control" v-model="content" type="number" id="rating" min="1" max="9" required>

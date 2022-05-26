@@ -9,8 +9,8 @@
         <thead>
           <tr>
             <th scope="col"></th>
-            <th scope="col" style="font-family:GimpoGothicBold00;">글쓴이</th>
-            <th scope="col" style="font-family:GimpoGothicBold00;">제목</th>
+            <th scope="col" style="text-align:left;font-family:GimpoGothicBold00;">글쓴이</th>
+            <th scope="col" style="text-align:left;font-family:GimpoGothicBold00;">제목</th>
             <th scope="col" style="font-family:GimpoGothicBold00;">등록일</th>
             <th scope="col" style="font-family:GimpoGothicBold00;">좋아요</th>
           </tr>
@@ -18,12 +18,12 @@
         <tbody>
           <tr v-for="article in articles" :key="article.pk">
             <th scope="row" style="font-family: 'GmarketSansMedium';">{{ article.pk }}</th>
-            <td style="font-family: 'GmarketSansMedium';">
+            <td style="text-align:left; font-family: 'GmarketSansMedium';">
               <router-link class="link" :to="{ name: 'profile', params: { username: article.user.username} }">
                 {{ article.user.username }}
               </router-link>
             </td>
-            <td style="font-family: 'GmarketSansMedium';">
+            <td style="font-family: 'GmarketSansMedium'; text-align: left">
               <router-link class="link" :to="{ name: 'article', params: { articlePk: article.pk } }">
                 {{ article.title }}  ({{ article.comment_count }})
               </router-link>

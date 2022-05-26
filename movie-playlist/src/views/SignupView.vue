@@ -1,27 +1,28 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <h1>Signup</h1>
-
     <account-error-list v-if="isAuthError"></account-error-list>
+    <div class="container" style="text-align: left; padding:100px;">
+      <form @submit.prevent="signup(credentials)">
+        <div>
+          <label class="form-label" for="username"></label>
+          <input placeholder="아이디를 입력하세요" class="form-control" type="text" id="username" v-model="credentials.username" required>
+        </div>
+        <div>
+          <label class="form-label" for="password1"></label>
+          <input placeholder="비밀번호를 입력하세요" class="form-control" type="password" id="password1" v-model="credentials.password1" required>
+        </div>
+        <div>
+          <label class="form-label" for="password2"></label>
+          <input placeholder="비밀번호를 다시 한 번 입력하세요" class="form-control" type="password" id="password2" v-model="credentials.password2" required>
+        </div>
+        <br>
+        <div>
+          <button class="btn btn-outline-secondary waves-effect mb-4">Signup</button>
+        </div>
+      </form>
+    </div>
 
-    <form @submit.prevent="signup(credentials)">
-      <div>
-        <label for="username">Username: </label>
-        <input type="text" id="username" v-model="credentials.username" required>
-      </div>
-      <div>
-        <label for="password1">Password: </label>
-        <input type="password" id="password1" v-model="credentials.password1" required>
-      </div>
-      <div>
-        <label for="password2">Password Confirmation:</label>
-        <input type="password" id="password2" v-model="credentials.password2" required>
-      </div>
-      <div>
-        <button>Signup</button>
-      </div>
-    </form>
   </div>
 </template>
 
