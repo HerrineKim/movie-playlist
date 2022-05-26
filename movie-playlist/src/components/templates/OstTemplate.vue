@@ -14,21 +14,22 @@
 
     <!-- 노래 목록 -->
     <div class="container" style="margin-top: 380px;">
-      <table class="table table-dark" style="background: none;">
+      <table class="table table-borderless" style="text-align:left; background: none;">
         <thead>
           <tr>
-            <th scope="col">노래 이름</th>
-            <th scope="col">아티스트</th>
-            <th scope="col">영화 제목</th>
-            <th scope="col">듣기</th>
+            <th scope="col" style="color: #EEEE; font-family: 'GimpoGothicBold00';">노래 이름</th>
+            <th scope="col" style="color: #EEEE; font-family: 'GimpoGothicBold00';">아티스트</th>
+            <th scope="col" style="color: #EEEE; font-family: 'GimpoGothicBold00';">영화 제목</th>
+            <th scope="col" style="color: #EEEE; font-family: 'GimpoGothicBold00';">듣기</th>
           </tr>
         </thead>
-        <tbody>
+        <hr>
+        <tbody >
           <tr v-for="OstInfo in OstInfos" :key="OstInfo.ost">
-            <th scope="row">{{ OstInfo.ost }}</th>
-            <td>{{ OstInfo.artist }}</td>
-            <td>{{ OstInfo.movie }}</td>
-            <td><button @click="selectVideo(OstInfo)">video</button></td>
+            <th scope="row" style="color: #EEEE; font-family:'EarlyFontDiary';">{{ OstInfo.ost }}</th>
+            <td style="color: #EEEE; font-family:MapoGoldenPier;">{{ OstInfo.artist }}</td>
+            <td style="color: #EEEE; font-family:'EarlyFontDiary';">{{ OstInfo.movie }}</td>
+            <td style="color: #EEEE; font-family:MapoGoldenPier;"><button class="btn btn-light btn-sm" @click="selectVideo(OstInfo)">▶</button></td>
           </tr>
         </tbody>
       </table>

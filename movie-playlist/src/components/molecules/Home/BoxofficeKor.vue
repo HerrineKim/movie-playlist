@@ -8,7 +8,7 @@
     <div
     v-for="box in boxoffice" :key="box.rnum"
     >
-      <span style="font-family: 'GmarketSansMedium';">
+      <span style="line-height: font-family: 'GmarketSansMedium';">
         {{ box.rank }}
       </span> 
       <span style="font-family: 'GmarketSansMedium';">
@@ -17,9 +17,10 @@
       <span style="font-family: 'GmarketSansMedium';"
       v-if="box.rankOldAndNew == 'NEW'"
       >
-        {{ box.rankOldAndNew }}
+        <button class=" btn btn-outline-primary btn-sm">
+          {{ box.rankOldAndNew }}
+        </button>
       </span>
-      <hr>
     </div>
   </div>
 </template>

@@ -2,6 +2,7 @@
   <div>
     <nav-bar></nav-bar>
 
+    <!-- 배우 프로필 -->
     <div class="container">
       <br>
       <div class="container">
@@ -10,32 +11,29 @@
             <div class="box" style="background: #BDBDBD; display: block; margin: 0px auto">
               <img 
               class="actorImg" :src="'https://www.themoviedb.org/t/p/w150_and_h225_bestv2' + actor.profile_path" alt="">
-
             </div>
           </div>
           <span class="p-3" style="font-size:40px; font-family:GEORGIA;">
             {{ actor.name }}  
           </span>
         </div>
-
       </div>
     </div>
-    <div>
-      <p>필모그래피</p>
-    </div>
-    <div class="movies container py-3">
+
+    <!-- 필모그래피 -->
+    <div class="movies container py-1">
       <div class="row mt-5">
         <div v-for="movie in actor.movies" :key="movie.poster_path" 
           class="col-12 col-sm-4 col-md-3"
           >
-          <div class="card border mb-3">
+          <div class="filmography-box card border mb-3">
               <img
               class="card-img-top"
               :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
               >
             <div class="card-body">
               <hr>
-              <h5 class="card-title">{{ movie.title }}</h5>
+              <h5 class="card-title" style="font-size: 18px; font-family: 'GimpoGothicBold00';">{{ movie.title }}</h5>
             </div>
           </div>
         </div>  
@@ -86,4 +84,7 @@ export default {
       object-fit: cover;
   }
 
+  .filmography-box {
+    box-shadow : 3px 3px 3px 0;
+  }
 </style>
