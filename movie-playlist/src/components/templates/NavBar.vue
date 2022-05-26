@@ -12,28 +12,28 @@
               무플리 홈
               <img style="width:22px; height:22px" src="@/assets/images/HomeIcon.png" alt="">
             </router-link>
-          </div>
+          </div><br>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/search'>영화 </router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/search'>영화 |</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/hashtag'>#무플리 </router-link> 
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/hashtag'>#무플리 |</router-link> 
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/actors'>인물 </router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/actors'>인물 |</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/OST'>이 노래 어디서 들었지? </router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/OST'>이노래 어디 나왔더라 |</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" :to="{ name: 'articles' }">커뮤니티 </router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" :to="{ name: 'articles' }">커뮤니티 ||</router-link>
         </li>
         <li v-if="!isLoggedIn" class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/login'>로그인 </router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/login'>로그인</router-link>
         </li>
         <li v-if="!isLoggedIn" class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" :to="{ name: 'signup' }">회원가입</router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" :to="{ name: 'signup' }">회원가입 </router-link>
         </li>
         <li v-if="isLoggedIn" class="nav-item">
           <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/logout'>로그아웃 </router-link>

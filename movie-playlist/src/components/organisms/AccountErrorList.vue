@@ -1,12 +1,10 @@
 <template>
   <div class="account-error-list">
-    <p v-for="(errors, field) in authError" :key="field">
-      {{ field }}
-      <ul>
-        <li v-for="(error, idx) in errors" :key="idx">
-          {{ error }}
-        </li>
-      </ul>
+    <p style="font-family: 'GmarketSansMedium';" v-for="(errors, field) in authError" :key="field">
+      {{ field }} | 
+        <span v-for="(error, idx) in errors" :key="idx">
+          {{ error }} ㅠㅠ
+        </span>
     </p>
   </div>
 </template>
@@ -23,7 +21,4 @@ export default {
 </script>
 
 <style>
-.account-error-list {
-  color: red;
-}
 </style>

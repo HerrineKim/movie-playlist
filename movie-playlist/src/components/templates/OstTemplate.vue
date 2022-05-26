@@ -359,7 +359,7 @@ export default {
         },
         {
           ost: 'How Long Will I Love You',
-          artist: 'Ellie Goulding',
+          artist: 'Jon Boden, Sam Sweeney & Ben Coleman',
           movie: '어바웃 타임',
           url: 'qhanxrVLepQ'
         }
@@ -370,7 +370,7 @@ export default {
     selectVideo(OstInfo) {
       this.src = `https://www.youtube.com/embed/${OstInfo.url}?autoplay=1&loop=1&showinfo=0&controls=0`
         if (document.body.scrollTop!=0 || document.documentElement.scrollTop!=0){
-            window.scrollBy(0,-1000);
+            window.scrollBy(0,-4000);
             var timeOut=setTimeout('scrollToTop()',10);
         }
         else clearTimeout(timeOut);

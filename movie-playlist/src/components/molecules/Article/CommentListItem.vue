@@ -1,22 +1,27 @@
 <template>
-  <li class="comment-list-item">
-    <router-link :to="{ name: 'profile', params: { username: comment.user.username } }">
-      {{ comment.user.username }}
-    </router-link>: 
-    
-    <span v-if="!isEditing">{{ payload.content }}</span>
+  <div class="container mt-3">
+    <div class="">
+      <div class="" style="text-align:left; font-family: 'GmarketSansMedium';">
+        <router-link :to="{ name: 'profile', params: { username: comment.user.username } }">
+          {{ comment.user.username }}
+        </router-link>: 
+        <div style="font-family: 'GmarketSansLight';" v-if="!isEditing">{{ payload.content }}</div>
 
-    <span v-if="isEditing">
-      <input type="text" v-model="payload.content">
-      <button @click="onUpdate">Update</button> |
-      <button @click="switchIsEditing">Cancle</button>
-    </span>
-
-    <span v-if="currentUser.username === comment.user.username && !isEditing">
-      <button @click="switchIsEditing">Edit</button> |
-      <button @click="deleteComment(payload)">Delete</button>
-    </span>
-  </li>
+        <span>
+          <div v-if="isEditing">
+            <input type="text" v-model="payload.content">
+            <button @click="onUpdate">Update</button> |
+            <button @click="switchIsEditing">Cancle</button>
+          </div>
+          <div style="float:right;" v-if="currentUser.username === comment.user.username && !isEditing">
+            <button class=" mt-3 btn btn-sm btn-outline-secondary waves-effect " @click="deleteComment(payload)">삭제</button>
+            <button class="mt-3 mx-2 btn btn-sm btn-outline-secondary waves-effect " @click="switchIsEditing">수정</button>
+          </div>
+        </span>
+        <br>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -53,8 +58,5 @@ export default {
 </script>
 
 <style>
-.comment-list-item {
-  border: 1px solid green;
 
-}
 </style>

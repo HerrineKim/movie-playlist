@@ -7,22 +7,22 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link style="font-family: 'GmarketSansMedium';" class="nav-link" :to="{ name: 'HomeView' }">무플리 홈</router-link>
+          <router-link style="font-family: 'GmarketSansMedium';" class="nav-link" :to="{ name: 'HomeView' }">무플리 홈 |</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/search'>영화</router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/search'>영화 |</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/hashtag'>#무플리</router-link> 
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/hashtag'>#무플리 |</router-link> 
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/actors'>인물</router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/actors'>인물 |</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/OST'>이거 어디서 나온 노래지?</router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/OST'>이노래 어디 나왔더라 |</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" :to="{ name: 'articles' }">커뮤니티</router-link>
+          <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" :to="{ name: 'articles' }">커뮤니티 ||</router-link>
         </li>
         <li v-if="!isLoggedIn" class="nav-item">
           <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/login'>로그인</router-link>

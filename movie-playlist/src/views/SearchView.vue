@@ -1,11 +1,17 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <div class="container">
+    <div class="container mt-3">
+      <img
+      class=""
+      style="width:50px;height:50px"
+      src="@/assets/images/EnterImage.png"
+      alt="엔터키 이미지"
+      >
       <!-- 검색창 -->
       <br>
       <br>
-      <div class="container col-5 my-3">
+      <div class="container col-5">
         <input
         class="form-control"
         id="searchbar"
@@ -15,14 +21,9 @@
         placeholder="찾고 싶은 영화를 입력하세요"
         >
       </div>
-      <img
-      class="mb-5"
-      style="width:50px;height:50px"
-      src="@/assets/images/EnterImage.png"
-      alt="엔터키 이미지"
-      >
+
       <!-- 검색결과 -->
-      <div class="row">
+      <div class="row mt-5">
         <p style="font-family:Go; text-align:left">
           * 검색하신 제목과 유사도가 가장 높은 6개의 영화를 보여드립니다</p>
         <div v-for="movie in search" :key="movie.pk" 
