@@ -21,10 +21,10 @@
         </div>
       </div>
 
-    <div class="container mt-3">
-      <div style="text-align: left;">
-        <p style="font-size: 35px; font-family: 'GimpoGothicBold00';">
-          내가 좋아하는 영화
+    <div class="container my-5">
+      <div style="text-align: left; margin-top:10px">
+        <p style="font-size: 30px; font-family:'GEORGIA';">
+          Likes
         </p>
       </div>
       <div class="row">

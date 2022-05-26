@@ -1,7 +1,6 @@
 <template>
   <div class="account-error-list">
     <p style="font-family: 'GmarketSansMedium';" v-for="(errors, field) in authError" :key="field">
-      {{ field }} | 
         <span v-for="(error, idx) in errors" :key="idx">
           {{ error }} ㅠㅠ
         </span>
