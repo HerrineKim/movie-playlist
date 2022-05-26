@@ -5,7 +5,7 @@ export default {
   state: {
     actors: [],
     actor: { name: "", profile_path: "", movies: []},
-    movie: {},
+    movie: [],
     recommendationMovies: [],
     similarMovies: [],
     search: [],

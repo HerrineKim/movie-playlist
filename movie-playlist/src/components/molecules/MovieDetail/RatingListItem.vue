@@ -1,22 +1,24 @@
 <template>
-  <li>
-    <router-link :to="{ name: 'profile', params: { username: rating.user.username} }">
-      {{ rating.user.username }}
-    </router-link>
-    
-    <span v-if="!isEditing">{{ payload.content }}</span>
+  <div class="container" style="text-align:left">
+    <p>
+      <router-link :to="{ name: 'profile', params: { username: rating.user.username} }">
+        {{ rating.user.username }}
+      </router-link>
+      
+      <span v-if="!isEditing">{{ payload.rate }}</span>
 
-    <span v-if="isEditing">
-      <input type="text" v-model="payload.content">
-      <button @click="onUpdate">Update</button> |
-      <button @click="switchIsEditing">Cancle</button>
-    </span>
-
-    <span v-if="currentUser.username === rating.user.username && !isEditing">
-      <button @click="switchIsEditing">Edit</button> |
-      <button @click="deleteRating(payload)">Delete</button>
-    </span>
-  </li>
+      <span v-if="isEditing">
+        <input type="text" v-model="payload.content">
+        <button @click="onUpdate">Update</button> |
+        <button @click="switchIsEditing">Cancle</button>
+      </span>
+      <br>
+      <span v-if="currentUser.username === rating.user.username && !isEditing">
+        <button class="mt-3 btn btn-sm btn-outline-secondary waves-effect" @click="switchIsEditing">Edit</button>
+        <button class="mt-3 mx-1 btn btn-sm btn-outline-secondary waves-effect" @click="deleteRating(payload)">Delete</button>
+      </span>
+    </p>
+  </div>
 </template>
 
 <script>

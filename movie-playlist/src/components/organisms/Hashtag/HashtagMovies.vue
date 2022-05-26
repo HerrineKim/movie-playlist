@@ -37,7 +37,7 @@
 
               <input id="drama" type="checkbox" v-model='checkedGenres' value="18">
               <label for="drama"># 드라마</label>
-      <br>
+
               <input id="romance" type="checkbox" v-model='checkedGenres' value="10749">
               <label for="romance"># 로맨스</label>
 
