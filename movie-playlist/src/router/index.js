@@ -149,7 +149,7 @@ router.beforeEach((to, from, next) => {
 
   // Auth가 필요한데, 로그인 되어있지 않다면?
   if (isAuthRequired && !isLoggedIn) {
-    alert('Require Login. Redirecting..')
+    alert('로그인하셔야 서비스를 이용하실 수 있습니다.')
     next({ name: 'login' })
   } else {
     next()

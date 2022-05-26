@@ -1,7 +1,9 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <h1>Logout</h1>
+    <h1 style="font-family: 'GmarketSansMedium';">
+      Logout 되었습니다.
+    </h1>
   </div>
 </template>
 

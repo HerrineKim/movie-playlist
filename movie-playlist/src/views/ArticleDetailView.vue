@@ -1,27 +1,40 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <h1>{{ article.title }}</h1>
+    <div class="container mt-3">
+      <p style="font-size:40px; font-family:MapoGoldenPier; text-align:left; margin-left:6px">
+        {{ article.title }}
+      </p>
+      <hr>
+      <div class="box-content card">
+        <div class="card-body" style="text-align:left;">
+          <p style="font-family: 'GmarketSansLight'; font-size:18px;">
+            {{ article.content }}
+          </p>
+        </div>
+      </div>
 
-    <p>
-      {{ article.content }}
-    </p>
-    <!-- Article Edit/Delete UI -->
-    <div v-if="isAuthor">
-      <router-link :to="{ name: 'articleEdit', params: { articlePk: article.pk} }">
-        <button>Edit</button>
-      </router-link> | 
-      <button @click="deleteArticle({ articlePk: article.pk })">Delete</button>
-    </div>
+      <!-- Article Edit/Delete UI -->
+      <div v-if="isAuthor">
+        <router-link :to="{ name: 'articleEdit', params: { articlePk: article.pk} }">
+          <button style="float: right; font-family:GimpoGothic" class="mt-3 btn btn-outline-secondary waves-effect mb-4">수정</button>
+        </router-link>
+        <button style="float: right; font-family:GimpoGothic" class=" mx-3 mt-3 btn btn-outline-secondary waves-effect mb-4" @click="deleteArticle({ articlePk: article.pk })">삭제</button>
+      </div>
 
-    <!-- Article Like UI -->
-    <div>
-      Likeit: <button @click="likeArticle({ articlePk: article.pk })">{{ like_count }}</button>
+      <!-- Article Like UI -->
+      <div style="float: left; margin-top:15px;">
+        <button class=" btn btn-outline-danger waves-effect mb-4" @click="likeArticle({ articlePk: article.pk })">
+          좋아요 ♥ {{ like_count }}
+        </button>
+      </div>
+        
+      <!-- Comment UI -->
+      <div style="margin-top:100px">
+        <hr>
+        <comment-list :comments="article.comments"></comment-list>
+      </div>
     </div>
-    
-    <hr>
-    <!-- Comment UI -->
-    <comment-list :comments="article.comments"></comment-list>
   </div>
 </template>
 
@@ -57,6 +70,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.box-content {
+  box-shadow : 1px 1px 1px 0;
+}
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 </style>

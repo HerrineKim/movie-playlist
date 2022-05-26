@@ -1,9 +1,22 @@
 <template>
-  <form @submit.prevent="onSubmit" class="comment-list-form">
-    <label for="comment">comment: </label>
-    <input type="text" id="comment" v-model="content" required>
-    <button>Comment</button>
-  </form>
+  <div class="container">
+    <form @submit.prevent="onSubmit" class="comment-list-form">
+      <div style="float: left; padding-right: 400px">
+        <label class="form-label" style="font-family:MapoGoldenPier; float: left;" for="comment">
+          댓글 남기기
+        </label>
+      </div>
+      <div >
+        <input style="margin-right: 40px" class="form-control" type="text" id="comment" v-model="content" required>
+      </div>
+      <div class="">
+        <button 
+        style="float: right; font-family:GimpoGothic; margin-top: 10px"
+        class="mt-3 btn btn-outline-secondary waves-effect mb-4">
+          입력</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -32,9 +45,4 @@ export default {
 </script>
 
 <style>
-.comment-list-form {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 1rem;
-}
 </style>

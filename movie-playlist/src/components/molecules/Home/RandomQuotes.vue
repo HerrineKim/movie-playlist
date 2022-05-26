@@ -7,7 +7,7 @@
       {{ quote[0].sentence }}
     </p>
     <p 
-    style="font-family:MapoGoldenPier"
+    style="font-family:MapoGoldenPier;"
     class="quoteMovie"
     >
       {{ quote[0].movie }}
