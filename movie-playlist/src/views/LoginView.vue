@@ -18,7 +18,7 @@
             <input placeholder="password" class="form-control" v-model="credentials.password" type="password" id="password" required>
           </div>
 
-          <button class="btn btn-primary btn-block mb-4">로그인</button>
+          <button class="btn btn-outline-secondary waves-effect mb-4">로그인</button>
         </form>
       </div>
     </div>
