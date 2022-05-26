@@ -43,23 +43,28 @@
       </div>
 
       <!-- 좋아요 -->
-      <div>
-        <div v-if="is_liked">
-          <i class="fas fa-heart"
-          @click="likeMovie"
-          >
-          </i>
-        </div>
-        <div v-else>
-          <i class="far fa-heart"
-          @click="likeMovie"
-          >
-          </i>
-        </div>
+      <div class="mt-3" style="float:right;">
+        <span>
+          좋아요
+        </span>
+        <span>
+          <div v-if="is_liked">
+            <i class="fas fa-heart"
+            @click="likeMovie"
+            >
+            </i>
+          </div>
+          <div v-else>
+            <i class="far fa-heart"
+            @click="likeMovie"
+            >
+            </i>
+          </div>
+        </span>
       </div>
 
       <!-- 평점 -->
-      <div>
+      <div class="container mt-5">
         <rating-list :ratings="movie.ratings"></rating-list>
       </div>
       
@@ -87,7 +92,6 @@
             </div>
           </div>
         </div>
-
     </div> 
   </div>
 </template>
