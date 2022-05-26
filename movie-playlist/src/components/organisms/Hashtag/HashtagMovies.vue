@@ -14,65 +14,104 @@
         <div class="answer" id="ans-1">
           <div class="container mt-3">
             <div style="text-align:left" class="container">
-              <input class="form-check-input" id="crime" type="checkbox" v-model='checkedGenres' value="80">
-              <label class="form-check-label" for="crime"><span>&#128184;</span>범죄</label>
+              
+              <label for="crime" class="check">
+                <input type="checkbox" id="crime" v-model='checkedGenres' value="80">
+                <p><span>&#128184;</span>범죄</p>
+              </label>
 
-              <input id="comedy" type="checkbox" v-model='checkedGenres' value="35">
-              <label for="comedy"># 코미디</label>
+              <label for="comedy" class="check">
+                <input type="checkbox" id="comedy" v-model='checkedGenres' value="35">
+                <p><span>&#128518;</span>코미디</p>
+              </label>
 
-              <input id="adventure" type="checkbox" v-model='checkedGenres' value="12">
-              <label for="adventure"># 모험</label>
+              <label for="adventure" class="check">
+                <input type="checkbox" id="adventure" v-model='checkedGenres' value="12">
+                <p><span>&#128511;</span>모험</p>
+              </label>
 
-              <input id="action" type="checkbox" v-model='checkedGenres' value="28">
-              <label for="action"># 액션</label>
+              <label for="action" class="check">
+                <input type="checkbox" id="action" v-model='checkedGenres' value="28">
+                <p><span>&#128170;</span>액션</p>
+              </label>
 
-              <input id="SF" type="checkbox" v-model='checkedGenres' value="878">
-              <label for="SF"># SF</label>
+              <label for="SF" class="check">
+                <input type="checkbox" id="SF" v-model='checkedGenres' value="878">
+                <p><span>&#128640;</span>SF</p>
+              </label>
 
-              <input id="animation" type="checkbox" v-model='checkedGenres' value="16">
-              <label for="animation"># 애니메이션</label>
+              <label for="animation" class="check">
+                <input type="checkbox" id="animation" v-model='checkedGenres' value="16">
+                <p><span>&#128060;</span>애니메이션</p>
+              </label>
 
-              <input id="family" type="checkbox" v-model='checkedGenres' value="10751">
-              <label for="family"># 가족</label>
+              <label for="family" class="check">
+                <input type="checkbox" id="family" v-model='checkedGenres' value="10751">
+                <p><span>&#128106;</span>가족</p>
+              </label>
 
-              <input id="drama" type="checkbox" v-model='checkedGenres' value="18">
-              <label for="drama"># 드라마</label>
+              <label for="drama" class="check">
+                <input type="checkbox" id="drama" v-model='checkedGenres' value="18">
+                <p><span>&#128250;</span>드라마</p>
+              </label>
 
-              <input id="romance" type="checkbox" v-model='checkedGenres' value="10749">
-              <label for="romance"># 로맨스</label>
+              <label for="romance" class="check">
+                <input type="checkbox" id="romance" v-model='checkedGenres' value="10749">
+                <p><span>&#128149;</span>로맨스</p>
+              </label>
 
-              <input id="mystery" type="checkbox" v-model='checkedGenres' value="9648">
-              <label for="mystery"># 미스터리</label>
+              <label for="mystery" class="check">
+                <input type="checkbox" id="mystery" v-model='checkedGenres' value="9648">
+                <p><span>&#128633;</span>미스터리</p>
+              </label>
 
-              <input id="fantasy" type="checkbox" v-model='checkedGenres' value="14">
-              <label for="fantasy"># 판타지</label>
+              <label for="fantasy" class="check">
+                <input type="checkbox" id="fantasy" v-model='checkedGenres' value="14">
+                <p><span>&#127776;</span>판타지</p>
+              </label>
 
-              <input id="thriller" type="checkbox" v-model='checkedGenres' value="53">
-              <label for="thriller"># 스릴러</label>
+              <label for="thriller" class="check">
+                <input type="checkbox" id="thriller" v-model='checkedGenres' value="53">
+                <p><span>&#128551;</span>스릴러</p>
+              </label>
 
-              <input id="war" type="checkbox" v-model='checkedGenres' value="10752">
-              <label for="war"># 전쟁</label>
+              <label for="war" class="check">
+                <input type="checkbox" id="war" v-model='checkedGenres' value="10752">
+                <p><span>&#128130;</span>전쟁</p>
+              </label>
 
-              <input id="music" type="checkbox" v-model='checkedGenres' value="10402">
-              <label for="music"># 음악</label>
+              <label for="music" class="check">
+                <input type="checkbox" id="music" v-model='checkedGenres' value="10402">
+                <p><span>&#127932;</span>음악</p>
+              </label>
 
-              <input id="western" type="checkbox" v-model='checkedGenres' value="37">
-              <label for="western"># 서부</label>
+              <label for="western" class="check">
+                <input type="checkbox" id="western" v-model='checkedGenres' value="37">
+                <p><span>&#128014;</span>서부</p>
+              </label>
 
-              <input id="TV 영화" type="checkbox" v-model='checkedGenres' value="10770">
-              <label for="TV 영화"># TV 영화</label>
+              <label for="TV 영화" class="check">
+                <input type="checkbox" id="TV 영화" v-model='checkedGenres' value="10770">
+                <p><span>&#128249;</span>TV 영화</p>
+              </label>
 
-              <input id="horror" type="checkbox" v-model='checkedGenres' value="27">
-              <label for="horror"># 공포</label>
+              <label for="horror" class="check">
+                <input type="checkbox" id="horror" v-model='checkedGenres' value="27">
+                <p><span>&#128561;</span>공포</p>
+              </label>
 
-              <input id="history" type="checkbox" v-model='checkedGenres' value="36">
-              <label for="history"># 역사</label>
+              <label for="history" class="check">
+                <input type="checkbox" id="history" v-model='checkedGenres' value="36">
+                <p><span>&#127886;</span>역사</p>
+              </label>
 
-              <input id="documentary" type="checkbox" v-model='checkedGenres' value="99">
-              <label for="documentary"># 다큐멘터리</label>
+              <label for="documentary" class="check">
+                <input type="checkbox" id="documentary" v-model='checkedGenres' value="99">
+                <p><span>&#127902;</span>다큐멘터리</p>
+              </label>
+              </div>
             </div>
           </div>
-        </div>
       </div>
       <!-- 상황별 태그 dropdown -->
       <div class="mt-3 faq-content">
@@ -82,43 +121,66 @@
         <div class="answer" id="ans-2">
           <div class="container mt-3">
             <div style="text-align:left" class="container">
-              <input id="withfamily" type="checkbox" v-model='checkedCasetags' value="1">
-              <label for="withfamily"># 가족과 함께 보기</label>
+              
+              <label for="withfamily" class="check">
+                <input type="checkbox" id="withfamily" v-model='checkedCasetags' value="1">
+                <p><span>&#128106;</span>가족과 함께 보기</p>
+              </label>
 
-              <input id="withfriends" type="checkbox" v-model='checkedCasetags' value="2">
-              <label for="withfriends"># 친구와 함께 보기</label>      
+              <label for="withfriends" class="check">
+                <input type="checkbox" id="withfriends" v-model='checkedCasetags' value="2">
+                <p><span>&#128109;</span>친구와 함께 보기</p>
+              </label>
 
-              <input id="withlover" type="checkbox" v-model='checkedCasetags' value="3">
-              <label for="withlover"># 썸남, 썸녀, 연인과 함께</label>   
+              <label for="withlover" class="check">
+                <input type="checkbox" id="withlover" v-model='checkedCasetags' value="3">
+                <p><span>&#128145;</span>썸남, 썸녀, 연인과 함께</p>
+              </label>
 
-              <input id="holidays" type="checkbox" v-model='checkedCasetags' value="4">
-              <label for="holidays"># 연말에 따뜻함을 느끼고 싶을 때</label>
+              <label for="holidays" class="check">
+                <input type="checkbox" id="holidays" v-model='checkedCasetags' value="4">
+                <p><span>&#128587;</span>연말에 따뜻함을 느끼고 싶을 때</p>
+              </label>
 
-              <input id="spring" type="checkbox" v-model='checkedCasetags' value="5">
-              <label for="spring"># 봄 한 송이</label>
+              <label for="spring" class="check">
+                <input type="checkbox" id="spring" v-model='checkedCasetags' value="5">
+                <p><span>&#127801;</span>봄 한 송이</p>
+              </label>
 
-              <input id="summer" type="checkbox" v-model='checkedCasetags' value="6">
-              <label for="summer"># 여름 한 컵</label>
+              <label for="summer" class="check">
+                <input type="checkbox" id="summer" v-model='checkedCasetags' value="6">
+                <p><span>&#127865;</span>여름 한 컵</p>
+              </label>
 
-              <input id="fall" type="checkbox" v-model='checkedCasetags' value="7">
-              <label for="fall"># 가을 한 장</label>
+              <label for="fall" class="check">
+                <input type="checkbox" id="fall" v-model='checkedCasetags' value="7">
+                <p><span>&#127809;</span>가을 한 장</p>
+              </label>
 
-              <input id="winter" type="checkbox" v-model='checkedCasetags' value="8">
-              <label for="winter"># 겨울 한 숨</label>
+              <label for="winter" class="check">
+                <input type="checkbox" id="winter" v-model='checkedCasetags' value="8">
+                <p><span>&#127788;</span>겨울 한 숨</p>
+              </label>
 
-              <input id="travel" type="checkbox" v-model='checkedCasetags' value="9">
-              <label for="travel"># 훌쩍 여행 떠나고 싶을 때</label>
+              <label for="travel" class="check">
+                <input type="checkbox" id="travel" v-model='checkedCasetags' value="9">
+                <p><span>&#128747;</span>훌쩍 여행 떠나고 싶을 때</p>
+              </label>
 
-              <input id="raining" type="checkbox" v-model='checkedCasetags' value="10">
-              <label for="raining"># 비 올 때</label>
+              <label for="raining" class="check">
+                <input type="checkbox" id="raining" v-model='checkedCasetags' value="10">
+                <p><span>&#127783;</span>비 올 때</p>
+              </label>
 
-              <input id="food" type="checkbox" v-model='checkedCasetags' value="11">
-              <label for="food"># 배고플 때 맛있는 음식과 함께</label>
-
+              <label for="food" class="check">
+                <input type="checkbox" id="food" v-model='checkedCasetags' value="11">
+                <p><span>&#127828;</span>배고플 때 맛있는 음식과 함께</p>
+              </label>
             </div>
           </div>
         </div>
       </div>
+
       <!-- 기분별 태그 dropdown -->
       <div class="mt-3 faq-content">
         <button @click="openCloseAnswer3('que-3')" class="question3 btn btn-outline-primary" id="que-3">
@@ -127,34 +189,51 @@
         <div class="answer" id="ans-3">
           <div class="container mt-3">
             <div style="text-align:left" class="container">
-              <div>
-                <input id="cry" type="checkbox" v-model='checkedMoodtags' value="1">
-                <label for="cry"># 펑펑 울고 싶을 때</label>
 
-                <input id="down" type="checkbox" v-model='checkedMoodtags' value="2">
-                <label for="down"># 기분 전환이 필요할 때</label>
+              <label for="cry" class="check">
+                <input type="checkbox" id="cry" v-model='checkedMoodtags' value="1">
+                <p><span>&#128557;</span>펑펑 울고 싶을 때</p>
+              </label>
 
-                <input id="stress" type="checkbox" v-model='checkedMoodtags' value="3">
-                <label for="stress"># 스트레스 뻥 뚫어버리기</label>
+              <label for="down" class="check">
+                <input type="checkbox" id="down" v-model='checkedMoodtags' value="2">
+                <p><span>&#128526;</span>기분 전환이 필요할 때</p>
+              </label>
 
-                <input id="dance" type="checkbox" v-model='checkedMoodtags' value="4">
-                <label for="dance"># 댄스를 부르는</label>
+              <label for="stress" class="check">
+                <input type="checkbox" id="stress" v-model='checkedMoodtags' value="3">
+                <p><span>&#128170;</span>스트레스 뻥 뚫어버리기</p>
+              </label>
 
-                <input id="killingtime" type="checkbox" v-model='checkedMoodtags' value="5">
-                <label for="killingtime"># 그냥 심심할 때 킬링타임</label>
+              <label for="dancd" class="check">
+                <input type="checkbox" id="dancd" v-model='checkedMoodtags' value="4">
+                <p><span>&#127908;</span>댄스를 부르는</p>
+              </label>
 
-                <input id="confidence" type="checkbox" v-model='checkedMoodtags' value="6">
-                <label for="confidence"># 자존감 상승 시켜주는</label>
+              <label for="killingtime" class="check">
+                <input type="checkbox" id="killingtime" v-model='checkedMoodtags' value="5">
+                <p><span>&#128541;</span>그냥 심심할 때 킬링타임</p>
+              </label>
 
-                <input id="butterfly" type="checkbox" v-model='checkedMoodtags' value="7">
-                <label for="butterfly"># 두근두근 설레고 싶을 때</label>
+              <label for="confidence" class="check">
+                <input type="checkbox" id="confidence" v-model='checkedMoodtags' value="6">
+                <p><span>&#128513;</span>자존감 상승 시켜주는</p>
+              </label>
 
-                <input id="cinematic" type="checkbox" v-model='checkedMoodtags' value="8">
-                <label for="cinematic"># 영상미 뿜뿜하는 영화</label>
+              <label for="butterfly" class="check">
+                <input type="checkbox" id="butterfly" v-model='checkedMoodtags' value="7">
+                <p><span>&#128525;</span>두근두근 설레고 싶을 때</p>
+              </label>
 
-                <input id="teen" type="checkbox" v-model='checkedMoodtags' value="9">
-                <label for="teen"># 하이틴 시절이 생각나는</label>
-              </div>
+              <label for="cinematic" class="check">
+                <input type="checkbox" id="cinematic" v-model='checkedMoodtags' value="8">
+                <p><span>&#127751;</span>영상미 뿜뿜하는 영화</p>
+              </label>
+
+              <label for="teen" class="check">
+                <input type="checkbox" id="teen" v-model='checkedMoodtags' value="9">
+                <p><span>&#128107;</span>하이틴 시절이 생각나는</p>
+              </label>
             </div>
           </div>
         </div>
@@ -171,6 +250,28 @@
       </button>
     </div>
 
+    <!-- 장르별 플레이리스트 -->
+    <div v-if="ok3" class="container py-3">
+      <p>장르</p>
+      <div class="row mt-5">
+        <div v-for="movie in genre_movies.movies" :key="movie.poster_path" 
+          class="col-12 col-sm-4 col-md-3"
+          >
+          <div class="card border mb-3">
+              <img
+              class="card-img-top"
+              :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
+              >
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">
+                {{ movie.tagline }}
+              </p>      
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
 
     <!-- 기분별 플레이리스트 -->
     <div v-if="ok1" class="container py-3">
@@ -218,43 +319,7 @@
       </div>
     </div>
 
-    <!-- 장르별 플레이리스트 -->
-    <div v-if="ok3" class="container py-3">
-      <p>장르</p>
-      <div class="row mt-5">
-        <div v-for="movie in genre_movies.movies" :key="movie.poster_path" 
-          class="col-12 col-sm-4 col-md-3"
-          >
-          <div class="card border mb-3">
-              <img
-              class="card-img-top"
-              :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt=""
-              >
-            <div class="card-body">
-              <h5 class="card-title">{{ movie.title }}</h5>
-              <p class="card-text">
-                {{ movie.tagline }}
-              </p>      
-            </div>
-          </div>
-        </div>  
-      </div>
-    </div>
-    <!-- <div v-if="ok1">
-      <li v-for="movie in moodtag_movies.movies" :key=movie.title>
-        {{ movie.title}}
-      </li>
-    </div>
-    <div v-if="ok2">
-      <li v-for="movie in casetag_movies.movies" :key=movie.title>
-        {{ movie.title}}
-      </li>
-    </div>
-    <div v-if="ok3">
-      <li v-for="movie in genre_movies.movies" :key=movie.title>
-        {{ movie.title}}
-      </li>
-    </div> -->
+
   </div>
 
 </template>
@@ -390,5 +455,29 @@ export default {
   }
   [id$="-toggle"] {
     margin-right: 15px;
+  }
+
+  label.check {
+  cursor: pointer;
+  }
+  label.check input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  label.check p {
+    padding: 7px 14px;
+      border: 2px solid #8f37aa;
+      display: inline-block;
+      color: #8f37aa;
+      border-radius: 3px;
+      text-transform: uppercase;
+  }
+  label.check input:checked + p {
+    border-color: #8f37aa;
+      background-color: #8f37aa;
+      color: #fff;
   }
 </style>
