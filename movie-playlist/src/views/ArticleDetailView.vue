@@ -56,7 +56,6 @@ export default {
   computed: {
     ...mapGetters(['article', 'currentUser', 'isAuthor']),
     like_count() {
-      // return article.like_users ? this.article.like_users.length : undefined
       return this.article.like_users?.length
     },
   },

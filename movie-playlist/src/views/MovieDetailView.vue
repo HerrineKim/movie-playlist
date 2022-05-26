@@ -62,9 +62,9 @@
           </div>
         </span>
       </div>
-
       <!-- 평점 -->
-      <div class="container mt-5">
+      <div class="container" style="margin-top:150px">
+        <hr>
         <rating-list :ratings="movie.ratings"></rating-list>
       </div>
       

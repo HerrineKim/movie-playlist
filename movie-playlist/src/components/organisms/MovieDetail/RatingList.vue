@@ -1,13 +1,15 @@
 <template>
   <div>
-    <ul>
+    <div>
       <rating-list-item
       v-for="rating in ratings"
       :rating="rating"
       :key="rating.pk"
       ></rating-list-item>
-    </ul>
-    <rating-list-form></rating-list-form>
+    </div>
+    <div class="my-3" style="text-align: right;">
+      <rating-list-form></rating-list-form>
+    </div>
   </div>
 </template>
 
