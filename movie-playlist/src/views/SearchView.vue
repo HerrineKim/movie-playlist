@@ -23,7 +23,7 @@
       >
       <!-- 검색결과 -->
       <div class="row">
-        <p style="font-family:MapoGoldenPier; text-align:left">
+        <p style="font-family:Go; text-align:left">
           * 검색하신 제목과 유사도가 가장 높은 6개의 영화를 보여드립니다</p>
         <div v-for="movie in search" :key="movie.pk" 
         class="col-12 col-sm-4 col-md-3"

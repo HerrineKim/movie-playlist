@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .profile-box {
   box-shadow : 3px 3px 3px 0;
 }
