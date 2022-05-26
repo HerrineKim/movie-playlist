@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link style="font-family: 'GmarketSansMedium';" class="nav-link" :to="{ name: 'HomeView' }">무플리 홈</router-link>
+          <router-link style="color:#6441A5; font-family: 'GmarketSansMedium';" class="nav-link" :to="{ name: 'HomeView' }">무플리 홈</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" style="font-family: 'GmarketSansMedium';" to='/search'>영화</router-link>
