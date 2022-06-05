@@ -2,8 +2,8 @@
 
 <br>
 
-## I. User API
+## [I. User API](https://github.com/HerrineKim/movie-playlist/blob/master/movie-playlist-BE/docs/User%20API.md)
 
-## II. Article API
+## [II. Article API](https://github.com/HerrineKim/movie-playlist/blob/master/movie-playlist-BE/docs/Article%20API.md)
 
-## III. Movie API
+## [III. Movie API](https://github.com/HerrineKim/movie-playlist/blob/master/movie-playlist-BE/docs/Movie%20API.md)
