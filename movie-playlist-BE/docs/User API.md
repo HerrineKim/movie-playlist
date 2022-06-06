@@ -1,4 +1,4 @@
-# 👤 User API
+# 🙋‍♂️ User API
 
 ## 🔗`/api/v1/accounts/signup/` 
 

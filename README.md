@@ -116,43 +116,6 @@ npm run serve
 
 
 
-## 서버 실행 방법
-
-```
-# 개인 Djnago 시크릿 키 추가
-# IDE 터미널에서 실행
-
-# 가상환경 생성
-
-python -m venv venv
-
-# 가상환경 활성화
-
-source venv/Scripts/activate
-
-# requirements 설치
-
-pip install -r requirements.txt
-
-# make migrations
-
-python manage.py makemigrations
-
-# migrate
-
-python manage.py migrate
-
-# fixture 데이터를 로드
-
-python manage.py loaddata moodtag.json casetag.json genre.json actor.json movie.json
-
-# 서버 실행
-
-python manage.py runserver
-```
-
-
-
 ## 🌵git branch convention
 
 #### frontend/
