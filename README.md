@@ -102,20 +102,6 @@ https://youtu.be/rruaTwDmHhc
 
 
 
-### +
-
-## 클라이언트 실행 방법
-
-```
-# IDE 터미널에서 실행
-
-npm install
-
-npm run serve
-```
-
-
-
 ## 🌵git branch convention
 
 #### frontend/
