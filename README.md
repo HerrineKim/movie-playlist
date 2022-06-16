@@ -2,7 +2,7 @@
 
 ## 🗓️프로젝트 개요
 
-<img src ="https://img.shields.io/badge/service-Web-red"></img><img src ="https://img.shields.io/badge/frontend-Vue-green"></img><img src ="https://img.shields.io/badge/backend-Django-092E20"></img> <img src ="https://img.shields.io/badge/Database-Sqlite-003B57"></img>
+<img src ="https://img.shields.io/badge/service-Web-red"></img><img src ="https://img.shields.io/badge/frontend-Vue-green"></img><img src ="https://img.shields.io/badge/backend-Django-092E20"></img><img src ="https://img.shields.io/badge/Database-Sqlite-003B57"></img>
 
 - **진행 기간 : 2022.05.18 ~ 2022.05.27 오전 9시 (9일간)**
 - **목표** 
