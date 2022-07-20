@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import store from '../store'
 
 import HomeView from '../views/HomeView.vue'
-import FirstView from '../views/FirstView.vue'
 import HashtagView from '../views/HashtagView.vue'
 import ActorsView from '../views/ActorsView.vue'
 import ArticleListView from '../views/ArticleListView.vue'
@@ -30,12 +29,6 @@ const routes = [
     name: 'HomeView',
     component: HomeView, 
   },
-  {
-    path: '/first',
-    name: 'first',
-    component: FirstView
-  },
-
   // 해시태그 영화 추천
   {
     path: '/hashtag',
