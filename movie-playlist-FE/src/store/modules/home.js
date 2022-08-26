@@ -16,8 +16,6 @@ if(day < 10){
 var today = year+""+month+""+day - 1
 var todaystr = today.toString()
 
-// 다음은?
-
 
 export default {
   state: {

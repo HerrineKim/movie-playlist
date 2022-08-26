@@ -107,6 +107,12 @@ https://youtu.be/rruaTwDmHhc
 
 
 
+## notion
+
+https://www.notion.so/hphk-edu/12-0815e92a9ced43bf88e55b0047c47bd0
+
+
+
 ## 🌵git branch convention
 
 #### frontend/
